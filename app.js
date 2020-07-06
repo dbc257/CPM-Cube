@@ -7,8 +7,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const FinanceDBRouter = require("./routes/api");
-app.use("/", FinanceDBRouter);
+const FinanceMockDBRouter = require("./routes/api-mock");
+app.use("/api-mock", FinanceMockDBRouter);
+const dataRouter = require("./routes/api");
+app.use("/", dataRouter);
 
 const port = process.env.PORT || 3001;
 
