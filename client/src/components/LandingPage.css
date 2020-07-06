@@ -1,0 +1,12 @@
+body {
+}
+
+.grid {
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:100px 100px;
+    grid-gap:25px;
+}

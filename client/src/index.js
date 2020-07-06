@@ -7,17 +7,19 @@ import { Provider } from "react-redux";
 import reducer from "./store/reducer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BaseLayout from "./containers/BaseLayout"
 
 let store = createStore(reducer);
-
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Switch>
-          <Route component={App} path="/" exact />
-        </Switch>
+        <BaseLayout>
+          <Switch>
+            <Route component={App} path="/" exact />
+          </Switch>
+        </BaseLayout>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
