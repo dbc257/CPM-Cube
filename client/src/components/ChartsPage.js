@@ -1,6 +1,6 @@
 import React from "react";
 import LineChart from "./LineChart";
-import CustomSizeBarChart from "./CustomSizeBarChart.js";
+import CustomSizeBarChart from "./CustomSizeBarChart";
 import HorizontalBarChart from "./HorizontalBarChart";
 import PieChart from "./PieChart";
 
