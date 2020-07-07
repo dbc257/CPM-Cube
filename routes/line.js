@@ -1,7 +1,7 @@
 let express = require("express");
 let router = express.Router();
 
-const data = {
+const lineData = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
   datasets: [
     {
@@ -29,7 +29,7 @@ const data = {
 };
 
 router.get("/", (req, res) => {
-  res.json(data);
+  res.json(lineData);
 });
 
 module.exports = router;

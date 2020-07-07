@@ -7,8 +7,16 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-const dataRouter = require("./routes/api");
-app.use("/", dataRouter);
+const lineDataRouter = require("./routes/line");
+app.use("/api/line", lineDataRouter);
+const pieDataRouter = require("./routes/pie");
+app.use("/api/pie", pieDataRouter);
+const hBarDataRouter = require("./routes/h-bar");
+app.use("/api/h-bar", hBarDataRouter);
+const BarDataRouter = require("./routes/bar");
+app.use("/api/bar", BarDataRouter);
+const BarDataRouter = require("./routes/finance");
+app.use("/api/finance", BarDataRouter);
 
 const port = process.env.PORT || 3001;
 
