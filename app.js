@@ -7,8 +7,10 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-const dataRouter = require("./routes/api");
-app.use("/", dataRouter);
+const lineDataRouter = require("./routes/line");
+app.use("/line", lineDataRouter);
+const pieDataRouter = require("./routes/pie");
+app.use("/pie", pieDataRouter);
 
 const port = process.env.PORT || 3001;
 
