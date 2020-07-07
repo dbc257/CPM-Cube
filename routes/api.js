@@ -1,7 +1,5 @@
 let express = require("express");
 let router = express.Router();
-const bodyParser = require("body-parser");
-router.use(bodyParser.json());
 
 const data = [
   { date: "2007-04-23T00:00:00.000Z", value: 93.24 },
@@ -1288,3 +1286,5 @@ const data = [
 router.get("/", (req, res) => {
   res.json(data);
 });
+
+module.exports = router;
