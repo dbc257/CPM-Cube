@@ -18,7 +18,6 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
-            {/* <Route component={ChartsPage} path="/charts/:id" exact /> */}
             <Route component={ChartsPage} path="/charts" exact />
             <Route component={App} path="/" exact />
           </Switch>

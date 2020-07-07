@@ -3,6 +3,13 @@ import { Line } from "react-chartjs-2";
 
 var createReactClass = require("create-react-class");
 
+// let data = fetch("http://localhost:3001/")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//     return data;
+//   });
+
 const data = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
   datasets: [
