@@ -7,7 +7,8 @@ import { Provider } from "react-redux";
 import reducer from "./store/reducer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import BaseLayout from "./containers/BaseLayout"
+import BaseLayout from "./containers/BaseLayout";
+import ChartsPage from "./components/ChartsPage";
 
 let store = createStore(reducer);
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
+            <Route component={ChartsPage} path="/charts/:id" exact />
             <Route component={App} path="/" exact />
           </Switch>
         </BaseLayout>
