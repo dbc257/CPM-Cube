@@ -1,7 +1,34 @@
 let express = require("express");
 let router = express.Router();
 
-const data = [
+const lineData = {
+  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  datasets: [
+    {
+      label: "My First dataset",
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: "rgba(75,192,192,0.4)",
+      borderColor: "rgba(75,192,192,1)",
+      borderCapStyle: "butt",
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: "miter",
+      pointBorderColor: "rgba(75,192,192,1)",
+      pointBackgroundColor: "#fff",
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(75,192,192,1)",
+      pointHoverBorderColor: "rgba(220,220,220,1)",
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40],
+    },
+  ],
+};
+
+const financeData = [
   { date: "2007-04-23T00:00:00.000Z", value: 93.24 },
   { date: "2007-04-24T00:00:00.000Z", value: 95.35 },
   { date: "2007-04-25T00:00:00.000Z", value: 98.84 },
@@ -1284,7 +1311,7 @@ const data = [
   { date: "2012-05-01T00:00:00.000Z", value: 582.13 },
 ];
 router.get("/", (req, res) => {
-  res.json(data);
+  res.json(financeData);
 });
 
 module.exports = router;
