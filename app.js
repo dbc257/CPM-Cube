@@ -15,8 +15,8 @@ const hBarDataRouter = require("./routes/h-bar");
 app.use("/api/h-bar", hBarDataRouter);
 const BarDataRouter = require("./routes/bar");
 app.use("/api/bar", BarDataRouter);
-const BarDataRouter = require("./routes/finance");
-app.use("/api/finance", BarDataRouter);
+const FinanceDataRouter = require("./routes/finance");
+app.use("/api/finance", FinanceDataRouter);
 
 const port = process.env.PORT || 3001;
 
