@@ -22,7 +22,7 @@ export default function NavBar() {
         </Nav>
         <Nav>
           <LinkContainer to="login">
-            <Nav.Link>Login or Register</Nav.Link>
+            <Nav.Link>Login Register</Nav.Link>
           </LinkContainer>
           {/* <Nav.Link eventKey={2} href="/login">
             Login or Register
