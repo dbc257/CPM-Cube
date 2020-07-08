@@ -17,6 +17,7 @@ export default function Charts() {
         setLineData(lineData);
       });
   }
+  
   useEffect(() => {
     fetchLineData();
   }, []);
