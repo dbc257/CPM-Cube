@@ -2,11 +2,21 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
+import brandImg from "../small-cube.png";
 
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+      {/* <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand> */}
+      <Navbar.Brand href="/">
+        <img
+          src={brandImg}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt="brand logo"
+        />
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">

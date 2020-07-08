@@ -2,9 +2,9 @@ import React from "react";
 import loginImg from "../../login.svg";
 
 export class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -12,7 +12,7 @@ export class Login extends React.Component {
         <div className="header">Login</div>
         <div className="content">
           <div className="image">
-            <img src={loginImg} />
+            <img alt="login" src={loginImg} />
           </div>
           <div className="form">
             <div className="form-group">
