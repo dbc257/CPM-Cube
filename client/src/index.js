@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
 import ChartsPage from "./components/ChartsPage";
+import LoginPage from "./components/LoginPage";
 
 let store = createStore(reducer);
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
+            <Route component={LoginPage} path="/login" exact />
             <Route component={ChartsPage} path="/charts" exact />
             <Route component={App} path="/" exact />
           </Switch>
