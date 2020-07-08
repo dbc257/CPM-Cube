@@ -20,11 +20,7 @@ app.use("/api/bar", BarDataRouter);
 const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
 
-let express = require("express");
 let router = express.Router();
-let models = require("../models");
-var bcrypt = require("bcryptjs");
-const bodyParser = require("body-parser");
 router.use(bodyParser.json());
 
 // POST route to register a new user account
