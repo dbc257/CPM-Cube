@@ -23,7 +23,7 @@ export default function (ComposedComponent) {
       isLoggedIn: state.isLoggedIn,
     };
   };
-  return connect(mapStateToProps)(Authenticate);
+  return connect(mapStateToProps, null)(Authenticate);
 }
 // const mapStateToProps = (dispatch) => {
 //   return {

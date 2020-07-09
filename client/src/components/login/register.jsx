@@ -28,7 +28,6 @@ export class Register extends React.Component {
     })
       .then((res) => res.json())
       .then((response) => {
-        console.log(response);
         alert(response.message);
         this.props.history.push("/login");
       });
@@ -52,8 +51,6 @@ export class Register extends React.Component {
                 placeholder="username"
                 required
               />
-            </div>
-            <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
                 onChange={this.handleRegister}
@@ -64,43 +61,17 @@ export class Register extends React.Component {
               />
             </div>
           </div>
-        </div>
-        <div className="footer">
-          <button
-            onClick={this.handleRegisterPost}
-            type="button"
-            className="btn"
-          >
-            Register
-          </button>
+          <div>
+            <button
+              onClick={this.handleRegisterPost}
+              type="button"
+              className="btn"
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 }
-
-// function Register(props) {
-// const [user, setUser] = useState({});
-
-// function handleRegister(e) {
-//   setUser({
-//     ...user,
-//     [e.target.name]: e.target.value,
-//   });
-// }
-
-// function handleRegisterPost() {
-//   fetch("http://localhost:3001/register", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(user),
-//   })
-//     .then((res) => res.json())
-//     .then((response) => {
-//       console.log(response);
-//       alert(response.message);
-//       props.history.push("/Login");
-//     });
-// }

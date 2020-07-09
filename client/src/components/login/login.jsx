@@ -2,20 +2,14 @@ import React from "react";
 import loginImg from "../../login.svg";
 import axios from "axios";
 import { connect } from "react-redux";
-import * as actionCreators from "../store/creators/actionCreators";
-import { setAuthenticationHeader } from "../utils/Auth";
+import * as actionCreators from "../../store/creators/actionCreators";
+import { setAuthenticationHeader } from "../../utils/Auth";
 
 export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: {},
-    };
-    this.state = {
-      user: {
-        username: "David",
-        password: "1234",
-      },
     };
   }
 
@@ -46,49 +40,44 @@ export class Login extends React.Component {
         } else {
           alert(response.data.message);
           alert("response failed");
-          this.state = {
+          this.props.state = {
             user: {
               ...this.state.user,
               password: "",
             },
           };
-          // setUser({
-          //   ...user,
-          //   password: "",
-          // });
         }
       });
   };
 
-  guestLoginPost = () => {
-    fetch("http://localhost:3001/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.props.guestUser),
-    })
-      .then((res) => res.json())
+  handleGuestPost = () => {
+    axios
+      .post("http://localhost:3001/api/login", {
+        username: "David",
+        password: "1234",
+      })
       .then((response) => {
-        if (response.success) {
+        if (response.data.success) {
+          const token = response.data.token;
+          localStorage.setItem("jsonwebtoken", token);
+          setAuthenticationHeader(token);
+          console.log(token);
           this.props.onAuthenticated(true);
-          alert(response.message);
+          alert(response.data.message);
           this.props.history.push("/");
         } else {
-          alert(response.message);
-          this.state = {
+          alert(response.data.message);
+          alert("response failed");
+          this.props.state = {
             user: {
               ...this.state.user,
               password: "",
             },
           };
-          // setUser({
-          //   ...user,
-          //   password: "",
-          // });
         }
       });
   };
+
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -107,8 +96,6 @@ export class Login extends React.Component {
                 placeholder="username"
                 required
               />
-            </div>
-            <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
                 onChange={this.handleLogin}
@@ -120,16 +107,13 @@ export class Login extends React.Component {
             </div>
           </div>
         </div>
-        <div className="footer">
-          <button onClick={this.handleLoginPost} type="button" className="btn">
-            Login
-          </button>
-        </div>
-        <div className="footer">
-          <button onClick={this.guestLoginPost} type="button" className="btn">
-            Guest Login
-          </button>
-        </div>
+        <button onClick={this.handleLoginPost} type="button" className="btn">
+          Login
+        </button>
+        <hr />
+        <button onClick={this.handleGuestPost} type="button" className="btn">
+          Guest Login
+        </button>
       </div>
     );
   }
@@ -140,5 +124,5 @@ const mapDispatchToProps = (dispatch) => {
     onAuthenticated: () => dispatch(actionCreators.authenticated(true)),
   };
 };
-// export default Login;
+
 export default connect(null, mapDispatchToProps)(Login);

@@ -7,9 +7,9 @@ export const button_closed = (chosenCharity) => {
   };
 };
 
-export const authenticated = (auth) => {
+export const authenticated = (isLoggedIn) => {
   return {
     type: actionTypes.AUTHENTICATED,
-    value: auth,
+    value: isLoggedIn,
   };
 };

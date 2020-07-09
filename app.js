@@ -3,7 +3,8 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const models = require("./models");
-// const auth = require("./middlewares/authMiddleware.js");
+const auth = require("./middlewares/authMiddleware.js");
+var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 app.use(cors());
@@ -38,7 +39,10 @@ app.post("/register", (req, res) => {
       models.User.create({ username: username, password: password }).then(
         (user) => {
           if (user) {
-            res.send({ message: "Registration complete!" });
+            res.send({
+              message:
+                "You are Registered! Now, you can click the blue panel named 'Login' to input your username and password.",
+            });
           } else {
             res.send({ message: "Error: Unable to create user!" });
           }
@@ -75,9 +79,8 @@ app.post("/api/login", (req, res) => {
           if (bcrypt.compareSync(password, persistedUser.password)) {
             const token = jwt.sign({ username: username }, "keyboard cat");
             console.log(token);
-            console.log("true");
             res.json({
-              message: "Loggin Success!",
+              message: "You are now logged in! ",
               success: true,
               token: token,
             });

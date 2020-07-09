@@ -1,6 +1,9 @@
 import React from "react";
 import "./LoginPage.scss";
 import { Login, Register } from "./login/index";
+import { connect } from "react-redux";
+import * as actionCreators from "../store/creators/actionCreators";
+// import { setAuthenticationHeader } from "../../utils/Auth";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -42,6 +45,7 @@ class LoginPage extends React.Component {
               <Login
                 containerRef={(ref) => (this.current = ref)}
                 history={this.props.history}
+                onAuthenticated={this.props.onAuthenticated}
               />
             )}
             {!isLoggedIn && (
@@ -77,7 +81,14 @@ const RightSide = (props) => {
   );
 };
 
-export default LoginPage;
+// export default LoginPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuthenticated: () => dispatch(actionCreators.authenticated(true)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LoginPage);
 
 // export default function Charts() {
 //   return (
