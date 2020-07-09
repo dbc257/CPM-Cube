@@ -22,6 +22,7 @@ ReactDOM.render(
             <Route component={LoginPage} path="/login" exact />
             <Route component={ChartsPage} path="/charts" exact />
             <Route component={App} path="/" exact />
+            <Route component={LoginPage} path="/login" />
           </Switch>
         </BaseLayout>
       </BrowserRouter>
