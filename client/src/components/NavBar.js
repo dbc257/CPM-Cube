@@ -7,16 +7,17 @@ import brandImg from "../small-cube.png";
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      {/* <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand> */}
-      <Navbar.Brand href="/">
-        <img
-          src={brandImg}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt="brand logo"
-        />
-      </Navbar.Brand>
+      <LinkContainer to="/">
+        <Navbar.Brand>
+          <img
+            src={brandImg}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="brand logo"
+          />
+        </Navbar.Brand>
+      </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -31,12 +32,12 @@ export default function NavBar() {
           </LinkContainer>
         </Nav>
         <Nav>
-          <LinkContainer to="login">
+          <LinkContainer to="/login">
             <Nav.Link>Login Register</Nav.Link>
           </LinkContainer>
-          {/* <Nav.Link eventKey={2} href="/login">
-            Login or Register
-          </Nav.Link> */}
+          {/* <LinkContainer eventKey={2} to="/login">
+            <Nav.Link>Login or Register</Nav.Link>
+          </LinkContainer> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

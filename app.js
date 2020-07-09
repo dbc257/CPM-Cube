@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-var bcrypt = require("bcryptjs");
 const models = require("./models");
+// const auth = require("./middlewares/authMiddleware.js");
+var bcrypt = require("bcryptjs");
 
 app.use(cors());
-
 app.use(bodyParser.json());
+
+let router = express.Router();
+router.use(bodyParser.json());
 
 const lineDataRouter = require("./routes/line");
 app.use("/api/line", lineDataRouter);
@@ -19,9 +22,6 @@ const BarDataRouter = require("./routes/bar");
 app.use("/api/bar", BarDataRouter);
 const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
-
-let router = express.Router();
-router.use(bodyParser.json());
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {
@@ -51,6 +51,7 @@ app.post("/register", (req, res) => {
 module.exports = router;
 
 app.post("/api/login", (req, res) => {
+  console.log(req.body);
   let username = req.body.username;
   let password = req.body.password;
   let userArray = [];

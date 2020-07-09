@@ -6,7 +6,7 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogginActive: true,
+      isLoggedIn: true,
     };
   }
 
@@ -16,9 +16,9 @@ class LoginPage extends React.Component {
   }
 
   changeState() {
-    const { isLogginActive } = this.state;
+    const { isLoggedIn } = this.state;
 
-    if (isLogginActive) {
+    if (isLoggedIn) {
       this.rightSide.classList.remove("right");
       this.rightSide.classList.add("left");
     } else {
@@ -26,23 +26,29 @@ class LoginPage extends React.Component {
       this.rightSide.classList.add("right");
     }
     this.setState((prevState) => ({
-      isLogginActive: !prevState.isLogginActive,
+      isLoggedIn: !prevState.isLoggedIn,
     }));
   }
 
   render() {
-    const { isLogginActive } = this.state;
-    const current = isLogginActive ? "Register" : "Login";
-    const currentActive = isLogginActive ? "login" : "register";
+    const { isLoggedIn } = this.state;
+    const current = isLoggedIn ? "Register" : "Login";
+    const currentActive = isLoggedIn ? "login" : "register";
     return (
       <div className="App">
         <div className="login">
           <div className="container" ref={(ref) => (this.container = ref)}>
-            {isLogginActive && (
-              <Login containerRef={(ref) => (this.current = ref)} />
+            {isLoggedIn && (
+              <Login
+                containerRef={(ref) => (this.current = ref)}
+                history={this.props.history}
+              />
             )}
-            {!isLogginActive && (
-              <Register containerRef={(ref) => (this.current = ref)} />
+            {!isLoggedIn && (
+              <Register
+                containerRef={(ref) => (this.current = ref)}
+                history={this.props.history}
+              />
             )}
           </div>
           <RightSide
