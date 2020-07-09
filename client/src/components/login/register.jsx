@@ -2,9 +2,36 @@ import React from "react";
 import loginImg from "../../login.svg";
 
 export class Register extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    };
+  }
+
+  handleRegister = (e) => {
+    this.setState({
+      user: {
+        ...this.state.user,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  handleRegisterPost = () => {
+    fetch("http://localhost:3001/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state.user),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        alert(response.message);
+        this.props.history.push("/login");
+      });
+  };
 
   render() {
     return (
@@ -17,18 +44,32 @@ export class Register extends React.Component {
           <div className="form">
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" />
-            </div>
-            <div className="form-group">
+              <input
+                onChange={this.handleRegister}
+                type="text"
+                name="username"
+                placeholder="username"
+                required
+              />
               <label htmlFor="password">Password</label>
-              <input type="text" name="password" placeholder="password" />
+              <input
+                onChange={this.handleRegister}
+                type="text"
+                name="password"
+                placeholder="password"
+                required
+              />
             </div>
           </div>
-        </div>
-        <div className="footer">
-          <button type="button" className="btn">
-            Register
-          </button>
+          <div>
+            <button
+              onClick={this.handleRegisterPost}
+              type="button"
+              className="btn"
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     );
