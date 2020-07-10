@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux"
-import { Link, withRouter } from "react-router-dom"
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import "./CubePage.css";
 
 function CubePage(props) {
@@ -19,9 +19,9 @@ function CubePage(props) {
   ];
 
   const handleClick = (emoji) => {
-    props.buttonChoice(emoji)
-    props.history.push("/charts")
-  }
+    props.buttonChoice(emoji);
+    props.history.push("/charts");
+  };
 
   emojis.map((e) => e[0]);
   return (
@@ -31,21 +31,19 @@ function CubePage(props) {
           <ul>
             {emojis.map((e) => {
               return (
-                  <div className="carousel__item">
-                    <div className="carousel__item-head">
-                      <button onClick={() => handleClick(e)}>
-                        {e[0]}
-                      </button>
-                    </div>
-                    <div className="carousel__item-body">
-                      <button onClick={() => handleClick(e)}>
-                        <p className="title">{e[1]}</p>
-                      </button>
-                      <button onClick={() => handleClick(e)}>
-                        <p className="Unicode">{e[2]}</p>
-                      </button>
-                    </div>
+                <div className="carousel__item">
+                  <div className="carousel__item-head">
+                    <button onClick={() => handleClick(e)}>{e[0]}</button>
                   </div>
+                  <div className="carousel__item-body">
+                    <button onClick={() => handleClick(e)}>
+                      <p className="title">{e[1]}</p>
+                    </button>
+                    <button onClick={() => handleClick(e)}>
+                      <p className="Unicode">{e[2]}</p>
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </ul>
@@ -62,8 +60,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(withRouter(CubePage))
-
+export default connect(null, mapDispatchToProps)(withRouter(CubePage));
 
 // .wrapper
 //   .carousel
