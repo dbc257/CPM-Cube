@@ -38,29 +38,31 @@ class LoginPage extends React.Component {
     const current = isLoggedIn ? "Register" : "Login";
     const currentActive = isLoggedIn ? "login" : "register";
     return (
-      <div className="App">
-        <div className="login">
-          <div className="container" ref={(ref) => (this.container = ref)}>
-            {isLoggedIn && (
-              <Login
-                containerRef={(ref) => (this.current = ref)}
-                history={this.props.history}
-                onAuthenticated={this.props.onAuthenticated}
-              />
-            )}
-            {!isLoggedIn && (
-              <Register
-                containerRef={(ref) => (this.current = ref)}
-                history={this.props.history}
-              />
-            )}
+      <div className="wrapper">
+        <div className="App">
+          <div className="login">
+            <div className="container" ref={(ref) => (this.container = ref)}>
+              {isLoggedIn && (
+                <Login
+                  containerRef={(ref) => (this.current = ref)}
+                  history={this.props.history}
+                  onAuthenticated={this.props.onAuthenticated}
+                />
+              )}
+              {!isLoggedIn && (
+                <Register
+                  containerRef={(ref) => (this.current = ref)}
+                  history={this.props.history}
+                />
+              )}
+            </div>
+            <RightSide
+              current={current}
+              currentActive={currentActive}
+              containerRef={(ref) => (this.rightSide = ref)}
+              onClick={this.changeState.bind(this)}
+            />
           </div>
-          <RightSide
-            current={current}
-            currentActive={currentActive}
-            containerRef={(ref) => (this.rightSide = ref)}
-            onClick={this.changeState.bind(this)}
-          />
         </div>
       </div>
     );

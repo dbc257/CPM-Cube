@@ -70,7 +70,8 @@
     flex-direction: column;
     justify-content: center;
     height: 90%;
-    background-color: #3498db;
+    // background-color: #3498db;
+    background: linear-gradient(60deg, #08bdbd, #420285);
     width: 100%;
     position: absolute;
     right: -34%;
@@ -121,4 +122,12 @@
   &:focus {
     outline: none;
   }
+}
+
+.login-wrapper {
+  background: linear-gradient(60deg, #420285, #08bdbd);
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import LineChart from "./LineChart";
-import BarChart from "./BarChart";
-import HorizontalBarChart from "./HorizontalBarChart";
-import PieChart from "./PieChart";
+import LineChart from "./charts/LineChart";
+import BarChart from "./charts/BarChart";
+import HorizontalBarChart from "./charts/HorizontalBarChart";
+import PieChart from "./charts/PieChart";
+import "./ChartsPage.css";
 
 export default function Charts() {
   const [lineData, setLineData] = useState({});
@@ -17,7 +18,7 @@ export default function Charts() {
         setLineData(lineData);
       });
   }
-  
+
   useEffect(() => {
     fetchLineData();
   }, []);
@@ -57,7 +58,12 @@ export default function Charts() {
 
   return (
     <div>
-      <h1>Chart Examples</h1>
+      <div className="charts-wrapper">
+        <br />
+        <div>
+          <h1>Chart Examples</h1>
+        </div>
+      </div>
       <hr />
       <LineChart lineData={lineData} />
       <hr />

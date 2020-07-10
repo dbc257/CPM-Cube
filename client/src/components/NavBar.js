@@ -34,11 +34,17 @@ function NavBar(props) {
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/about">
-            <Nav.Link>About</Nav.Link>
+          <LinkContainer to="/cube-chart">
+            <Nav.Link>Cube Chart</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/cube">
+            <Nav.Link>Cube</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/charts">
             <Nav.Link>Charts</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/about-us">
+            <Nav.Link>About Us</Nav.Link>
           </LinkContainer>
           {/* {props.isLoggedIn ? (
             <LinkContainer to="/charts">
@@ -47,14 +53,13 @@ function NavBar(props) {
           ) : null} to="/"*/}
         </Nav>
         <Nav>
-          <LinkContainer to="/">
-            <Nav.Link type="button" onClick={handleSignOut}>
-              {/* <button>Signout</button> */}
-              Signout
-            </Nav.Link>
-          </LinkContainer>
           <LinkContainer to="/login">
             <Nav.Link>Login Register</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/">
+            <Nav.Link type="button" onClick={handleSignOut}>
+              Signout
+            </Nav.Link>
           </LinkContainer>
           {/* <LinkContainer eventKey={2} to="/login">
             <Nav.Link>Login or Register</Nav.Link>

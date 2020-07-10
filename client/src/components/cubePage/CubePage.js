@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 // import { Link } from "react-router-dom"
 import "./CubePage.css";
 
@@ -7,32 +7,30 @@ function CubePage(props) {
   // {pass in props onclick}
 
   const emojis = [
-                  ["🐳", "spouting whale", "U+1F433	"], 
-                  ["🐋", "whale", "U+1F40B	"], 
-                  ["🐬", "dolphin", "U+1F42C	"], 
-                  ["🐟", "fish", "U+1F41F	"], 
-                  ["🐠", "tropical fish", "U+1F420	"], 
-                  ["🐡", "blowfish", "U+1F421	"], 
-                  ["🦈", "shark", "U+1F988	"], 
-                  ["🐙", "octopus", "U+1F419	"], 
-                  ["🐚", "spiral shell", "U+1F41A	"]
-  ]
+    ["🐳", "spouting whale", "U+1F433	"],
+    ["🐋", "whale", "U+1F40B	"],
+    ["🐬", "dolphin", "U+1F42C	"],
+    ["🐟", "fish", "U+1F41F	"],
+    ["🐠", "tropical fish", "U+1F420	"],
+    ["🐡", "blowfish", "U+1F421	"],
+    ["🦈", "shark", "U+1F988	"],
+    ["🐙", "octopus", "U+1F419	"],
+    ["🐚", "spiral shell", "U+1F41A	"],
+  ];
 
   const handleClick = (emoji) => {
-    props.buttonChoice(emoji)
-  }
+    props.buttonChoice(emoji);
+  };
 
-  emojis.map(e => e[0])
+  emojis.map((e) => e[0]);
   return (
     <div className="wrapper">
       <div className="carousel">
-        {emojis.map(e => {
+        {emojis.map((e) => {
           return (
-            <div className="carousel__item">
+            <div key={e[1]} className="carousel__item">
               <div className="carousel__item-head">
-                <button onClick={() => handleClick(e)}>
-                  {e[0]}
-                </button>
+                <button onClick={() => handleClick(e)}>{e[0]}</button>
               </div>
               <div className="carousel__item-body">
                 <button onClick={() => handleClick(e)}>
@@ -50,26 +48,27 @@ function CubePage(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    buttonChoice: (event) => dispatch({ type: "BUTTON_CHOSEN", payload: event })
-  }
-}
+    buttonChoice: (event) =>
+      dispatch({ type: "BUTTON_CHOSEN", payload: event }),
+  };
+};
 
-export default connect(null, mapDispatchToProps)(CubePage)
+export default connect(null, mapDispatchToProps)(CubePage);
 
 // .wrapper
 //   .carousel
-//     - emojis = [ ["🐳", "spouting whale", "U+1F433	"], 
-//                  ["🐋", "whale", "U+1F40B	"], 
-//                  ["🐬", "dolphin", "U+1F42C	"], 
-//                  ["🐟", "fish", "U+1F41F	"], 
-//                  ["🐠", "tropical fish", "U+1F420	"], 
-//                  ["🐡", "blowfish", "U+1F421	"], 
-//                  ["🦈", "shark", "U+1F988	"], 
-//                  ["🐙", "octopus", "U+1F419	"], 
+//     - emojis = [ ["🐳", "spouting whale", "U+1F433	"],
+//                  ["🐋", "whale", "U+1F40B	"],
+//                  ["🐬", "dolphin", "U+1F42C	"],
+//                  ["🐟", "fish", "U+1F41F	"],
+//                  ["🐠", "tropical fish", "U+1F420	"],
+//                  ["🐡", "blowfish", "U+1F421	"],
+//                  ["🦈", "shark", "U+1F988	"],
+//                  ["🐙", "octopus", "U+1F419	"],
 //                  ["🐚", "spiral shell", "U+1F41A	"] ]
-    
+
 //     - emojis.each do |i|
 //       .carousel__item
 //         .carousel__item-head
