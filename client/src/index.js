@@ -12,6 +12,7 @@ import CubeChart from "./components/CubeChart";
 import CubePage from "./components/cubePage/CubePage";
 import AboutUs from "./components/AboutUs";
 import LoginPage from "./components/LoginPage";
+import FinanceAPI from "./components/FinanceAPI";
 import { setAuthenticationHeader } from "./utils/Auth";
 import thunk from "redux-thunk";
 // import requireAuth from "./components/requireAuth";
@@ -55,6 +56,7 @@ ReactDOM.render(
             <Route exact path="/charts" component={ChartsPage} />
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             <Route component={App} path="/" exact />
+            <Route component={FinanceAPI} path="/finance-api" exact />
           </Switch>
         </BaseLayout>
       </BrowserRouter>
