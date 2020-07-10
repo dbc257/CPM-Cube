@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import LineChart from "./LineChart";
-import BarChart from "./BarChart";
-import HorizontalBarChart from "./HorizontalBarChart";
-import PieChart from "./PieChart";
 import { connect } from "react-redux"
+import LineChart from "./charts/LineChart";
+import BarChart from "./charts/BarChart";
+import HorizontalBarChart from "./charts/HorizontalBarChart";
+import PieChart from "./charts/PieChart";
+import "./ChartsPage.css";
 
 function Charts(props) {
   const [lineData, setLineData] = useState({});
@@ -18,7 +19,7 @@ function Charts(props) {
         setLineData(lineData);
       });
   }
-  
+
   useEffect(() => {
     fetchLineData();
   }, []);
@@ -61,6 +62,12 @@ function Charts(props) {
   return (
     <div>
       <h1>Chart Examples for {`${props.chosenOrg[0]}`}</h1>
+      <div className="charts-wrapper">
+        <br />
+        <div>
+          <h1>Chart Examples</h1>
+        </div>
+      </div>
       <hr />
       <LineChart lineData={lineData} />
       <hr />
