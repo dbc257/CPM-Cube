@@ -1,12 +1,15 @@
 import React from "react";
 import "./LoginPage.scss";
 import { Login, Register } from "./login/index";
+import { connect } from "react-redux";
+import * as actionCreators from "../store/creators/actionCreators";
+// import { setAuthenticationHeader } from "../../utils/Auth";
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogginActive: true,
+      isLoggedIn: true,
     };
   }
 
@@ -16,9 +19,9 @@ class LoginPage extends React.Component {
   }
 
   changeState() {
-    const { isLogginActive } = this.state;
+    const { isLoggedIn } = this.state;
 
-    if (isLogginActive) {
+    if (isLoggedIn) {
       this.rightSide.classList.remove("right");
       this.rightSide.classList.add("left");
     } else {
@@ -26,23 +29,30 @@ class LoginPage extends React.Component {
       this.rightSide.classList.add("right");
     }
     this.setState((prevState) => ({
-      isLogginActive: !prevState.isLogginActive,
+      isLoggedIn: !prevState.isLoggedIn,
     }));
   }
 
   render() {
-    const { isLogginActive } = this.state;
-    const current = isLogginActive ? "Register" : "Login";
-    const currentActive = isLogginActive ? "login" : "register";
+    const { isLoggedIn } = this.state;
+    const current = isLoggedIn ? "Register" : "Login";
+    const currentActive = isLoggedIn ? "login" : "register";
     return (
       <div className="App">
         <div className="login">
           <div className="container" ref={(ref) => (this.container = ref)}>
-            {isLogginActive && (
-              <Login containerRef={(ref) => (this.current = ref)} />
+            {isLoggedIn && (
+              <Login
+                containerRef={(ref) => (this.current = ref)}
+                history={this.props.history}
+                onAuthenticated={this.props.onAuthenticated}
+              />
             )}
-            {!isLogginActive && (
-              <Register containerRef={(ref) => (this.current = ref)} />
+            {!isLoggedIn && (
+              <Register
+                containerRef={(ref) => (this.current = ref)}
+                history={this.props.history}
+              />
             )}
           </div>
           <RightSide
@@ -71,7 +81,14 @@ const RightSide = (props) => {
   );
 };
 
-export default LoginPage;
+// export default LoginPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuthenticated: () => dispatch(actionCreators.authenticated(true)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LoginPage);
 
 // export default function Charts() {
 //   return (

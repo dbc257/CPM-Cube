@@ -2,12 +2,16 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-var bcrypt = require("bcryptjs");
 const models = require("./models");
+const auth = require("./middlewares/authMiddleware.js");
+var jwt = require("jsonwebtoken");
+var bcrypt = require("bcryptjs");
 
 app.use(cors());
-
 app.use(bodyParser.json());
+
+let router = express.Router();
+router.use(bodyParser.json());
 
 const lineDataRouter = require("./routes/line");
 app.use("/api/line", lineDataRouter);
@@ -19,9 +23,6 @@ const BarDataRouter = require("./routes/bar");
 app.use("/api/bar", BarDataRouter);
 const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
-
-let router = express.Router();
-router.use(bodyParser.json());
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {
@@ -38,7 +39,10 @@ app.post("/register", (req, res) => {
       models.User.create({ username: username, password: password }).then(
         (user) => {
           if (user) {
-            res.send({ message: "Registration complete!" });
+            res.send({
+              message:
+                "You are Registered! Now, you can click the blue panel named 'Login' to input your username and password.",
+            });
           } else {
             res.send({ message: "Error: Unable to create user!" });
           }
@@ -51,6 +55,7 @@ app.post("/register", (req, res) => {
 module.exports = router;
 
 app.post("/api/login", (req, res) => {
+  console.log(req.body);
   let username = req.body.username;
   let password = req.body.password;
   let userArray = [];
@@ -74,9 +79,8 @@ app.post("/api/login", (req, res) => {
           if (bcrypt.compareSync(password, persistedUser.password)) {
             const token = jwt.sign({ username: username }, "keyboard cat");
             console.log(token);
-            console.log("true");
             res.json({
-              message: "Loggin Success!",
+              message: "You are now logged in! ",
               success: true,
               token: token,
             });

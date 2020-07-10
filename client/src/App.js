@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import LandingPage from "./components/LandingPage";
 import FinanceList from "./components/FinanceList";
+import LandingPage from "./components/cubePage/CubePage";
 
 function App() {
   return (

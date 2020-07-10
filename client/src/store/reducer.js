@@ -1,17 +1,17 @@
-// Global state 
+// Global state
 let initialState = {
-    chosenCharity: null,
-}
+  buttonChoice: null,
+};
 
 // Reducer
 let reducer = (state = initialState, action) => {
-    if (action.type === "BUTTON_CHOSEN") {
-        return {
-            ...state,
-            chosenCharity: action.payload
-        }
-    }
-    return state
-}
+  if (action.type === "BUTTON_CHOSEN") {
+    return {
+      ...state,
+      buttonChoice: action.payload,
+    };
+  }
+  return state;
+};
 
 export default reducer;
