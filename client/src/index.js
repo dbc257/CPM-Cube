@@ -14,13 +14,13 @@ import requireAuth from "./components/requireAuth";
 import thunk from "redux-thunk";
 // import * as actionTypes from "./store/actions/actionTypes";
 
-import charityReducer from "./store/reducers/buttons";
+import buttonReducer from "./store/reducers/buttons";
 import loginReducer from "./store/reducers/login";
 // import reducer from "./store/reducer";
 // let store = createStore(reducer);
 
 const rootReducer = combineReducers({
-  charityRed: charityReducer,
+  buttonRed: buttonReducer,
   loginRed: loginReducer,
 });
 

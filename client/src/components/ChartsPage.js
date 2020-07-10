@@ -3,8 +3,9 @@ import LineChart from "./LineChart";
 import BarChart from "./BarChart";
 import HorizontalBarChart from "./HorizontalBarChart";
 import PieChart from "./PieChart";
+import { connect } from "react-redux"
 
-export default function Charts() {
+function Charts(props) {
   const [lineData, setLineData] = useState({});
   const [pieData, setPieData] = useState({});
   const [hBarData, setHBarData] = useState({});
@@ -55,9 +56,11 @@ export default function Charts() {
     fetchBarData();
   }, []);
 
+  console.log(props.chosenOrg)
+
   return (
     <div>
-      <h1>Chart Examples</h1>
+      <h1>Chart Examples for {`${props.chosenOrg[0]}`}</h1>
       <hr />
       <LineChart lineData={lineData} />
       <hr />
@@ -70,3 +73,11 @@ export default function Charts() {
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    chosenOrg: state.buttonRed.chosenOrg
+  }
+}
+
+export default connect(mapStateToProps)(Charts)
