@@ -16,8 +16,7 @@ function FinanceList(props) {
   const financeItems = financials.map((financeItem) => {
     return (
       <li>
-        {"Gross Profit:"} {financeItem.grossProfit} {"USD"},
-        {" Amount of Blood Sucked From the Working Class:"}{" "}
+        {"Gross Profit:"} {financeItem.grossProfit} {"USD"},{" Revenue:"}{" "}
         {financeItem.revenue}
         {"USD"},{" Operating Income:"} {financeItem.operatingIncome}
         {"USD"}
