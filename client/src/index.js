@@ -8,11 +8,15 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
 import ChartsPage from "./components/ChartsPage";
+import CubeChart from "./components/CubeChart";
+import CubePage from "./components/cubePage/CubePage";
+import AboutUs from "./components/AboutUs";
 import LoginPage from "./components/LoginPage";
 import { setAuthenticationHeader } from "./utils/Auth";
-import requireAuth from "./components/requireAuth";
 import thunk from "redux-thunk";
+// import requireAuth from "./components/requireAuth";
 // import * as actionTypes from "./store/actions/actionTypes";
+// import HomePage from "./components/HomePage"
 
 import charityReducer from "./store/reducers/buttons";
 import loginReducer from "./store/reducers/login";
@@ -40,19 +44,21 @@ setAuthenticationHeader(token);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <BaseLayout>
           <Switch>
             <Route component={LoginPage} path="/login" exact />
-            {/* <Route component={ChartsPage} path="/charts" exact /> */}
-            <Route exact path="/charts" component={requireAuth(ChartsPage)} />
+            <Route component={CubeChart} path="/cube-chart" exact />
+            <Route component={CubePage} path="/cube" exact />
+            <Route component={AboutUs} path="/about-us" exact />
+            <Route exact path="/charts" component={ChartsPage} />
+            {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             <Route component={App} path="/" exact />
-            <Route component={LoginPage} path="/login" />
           </Switch>
         </BaseLayout>
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
