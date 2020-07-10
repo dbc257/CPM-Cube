@@ -1,9 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 
-export const button_closed = (chosenCharity) => {
+export const buttonChosen = (chosenOrganization) => {
   return {
-    type: actionTypes.BUTTON_CLOSED,
-    payload: chosenCharity,
+    type: actionTypes.BUTTON_CHOSEN,
+    payload: chosenOrganization,
   };
 };
 

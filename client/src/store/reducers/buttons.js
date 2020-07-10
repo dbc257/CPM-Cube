@@ -2,16 +2,16 @@ import * as actionTypes from "../actions/actionTypes";
 
 // Global state
 let initialState = {
-  chosenCharity: null,
+  chosenOrg: null,
 };
 
 // Reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.BUTTON_CLOSED: {
+    case actionTypes.BUTTON_CHOSEN: {
       return {
         ...state,
-        chosenCharity: action.payload,
+        chosenOrg: action.payload,
       };
     }
     default:

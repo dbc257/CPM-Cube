@@ -1,9 +1,9 @@
 import React from "react";
-// import { connect } from "react-redux"
+import { connect } from "react-redux"
 // import { Link } from "react-router-dom"
-import "./LandingPage.css";
+import "./CubePage.css";
 
-export default function HomePage() {
+function CubePage(props) {
   // {pass in props onclick}
 
   const emojis = [
@@ -18,6 +18,10 @@ export default function HomePage() {
                   ["🐚", "spiral shell", "U+1F41A	"]
   ]
 
+  const handleClick = (emoji) => {
+    props.buttonChoice(emoji)
+  }
+
   emojis.map(e => e[0])
   return (
     <div className="wrapper">
@@ -26,20 +30,33 @@ export default function HomePage() {
           return (
             <div className="carousel__item">
               <div className="carousel__item-head">
-                {e[0]}
+                <button onClick={() => handleClick(e)}>
+                  {e[0]}
+                </button>
               </div>
               <div className="carousel__item-body">
-                <p className="title">{e[1]}</p>
-                <p className="Unicode">{e[2]}</p>
+                <button onClick={() => handleClick(e)}>
+                  <p className="title">{e[1]}</p>
+                </button>
+                <button onClick={() => handleClick(e)}>
+                  <p className="Unicode">{e[2]}</p>
+                </button>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>
   );
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    buttonChoice: (event) => dispatch({ type: "BUTTON_CHOSEN", payload: event })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CubePage)
 
 // .wrapper
 //   .carousel

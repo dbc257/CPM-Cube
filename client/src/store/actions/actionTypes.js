@@ -1,2 +1,2 @@
-export const BUTTON_CLOSED = "BUTTON_CHOSEN";
+export const BUTTON_CHOSEN = "BUTTON_CHOSEN";
 export const AUTHENTICATED = "AUTHENTICATED";
