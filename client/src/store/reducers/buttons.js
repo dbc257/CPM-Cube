@@ -6,7 +6,7 @@ let initialState = {
 };
 
 // Reducer
-const reducer = (state = initialState, action) => {
+const buttonReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.BUTTON_CHOSEN: {
       return {
@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default buttonReducer;
 
 // let reducer = (state = initialState, action) => {
 //     if (action.type === "BUTTON_CHOSEN") {

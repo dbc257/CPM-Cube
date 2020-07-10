@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux"
 import LineChart from "./charts/LineChart";
 import BarChart from "./charts/BarChart";
 import HorizontalBarChart from "./charts/HorizontalBarChart";
 import PieChart from "./charts/PieChart";
 import "./ChartsPage.css";
 
-export default function Charts() {
+function Charts(props) {
   const [lineData, setLineData] = useState({});
   const [pieData, setPieData] = useState({});
   const [hBarData, setHBarData] = useState({});
@@ -56,8 +57,11 @@ export default function Charts() {
     fetchBarData();
   }, []);
 
+  console.log(props.chosenOrg)
+
   return (
     <div>
+      <h1>Chart Examples for {`${props.chosenOrg[0]}`}</h1>
       <div className="charts-wrapper">
         <br />
         <div>
@@ -76,3 +80,11 @@ export default function Charts() {
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    chosenOrg: state.buttonRed.chosenOrg
+  }
+}
+
+export default connect(mapStateToProps)(Charts)
