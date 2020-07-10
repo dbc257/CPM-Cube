@@ -61,7 +61,7 @@ function Charts(props) {
 
   return (
     <div>
-      <h1>Chart Examples for {`${props.chosenOrg[0]}`}</h1>
+      <h1>Chart Examples for {`${props.chosenOrg}`}</h1>
       <div className="charts-wrapper">
         <br />
         <div>

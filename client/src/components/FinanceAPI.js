@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux"
 
 function FinanceList(props) {
   const [financials, setFinancials] = useState([]);
-
+  console.log(props.chosenOrg)
   useEffect(() => {
     fetch(
-      "https://financialmodelingprep.com/api/v3/income-statement/FB?period=quarter&apikey=ebfb009cc4e9d8c8309b0ce2cf086c63"
+      `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg[1]}?period=quarter&apikey=ebfb009cc4e9d8c8309b0ce2cf086c63`
     )
       .then((response) => response.json())
       .then((result) => {
@@ -27,4 +28,10 @@ function FinanceList(props) {
   return <ul>{financeItems}</ul>;
 }
 
-export default FinanceList;
+const mapStateToProps = state => {
+  return {
+    chosenOrg: state.buttonRed.chosenOrg
+  }
+}
+
+export default connect(mapStateToProps)(FinanceList);
