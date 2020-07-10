@@ -43,10 +43,10 @@ function NavBar(props) {
           <LinkContainer to="/charts">
             <Nav.Link>Charts</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/charts">
+          <LinkContainer to="/finance-api">
             <Nav.Link>Finance API</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/finance-api">
+          <LinkContainer to="/about-us">
             <Nav.Link>About Us</Nav.Link>
           </LinkContainer>
           {/* {props.isLoggedIn ? (
