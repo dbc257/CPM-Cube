@@ -1,21 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import "./CubePage.css";
+import "./CubePage.scss";
 
 function CubePage(props) {
   // {pass in props onclick}
 
   const emojis = [
-    ["🐳", "spouting whale", "U+1F433	"],
-    ["🐋", "whale", "U+1F40B	"],
-    ["🐬", "dolphin", "U+1F42C	"],
-    ["🐟", "fish", "U+1F41F	"],
-    ["🐠", "tropical fish", "U+1F420	"],
-    ["🐡", "blowfish", "U+1F421	"],
-    ["🦈", "shark", "U+1F988	"],
-    ["🐙", "octopus", "U+1F419	"],
-    ["🐚", "spiral shell", "U+1F41A	"],
+    ["🐳", "aapl", "U+1F433	"],
+    ["🐋", "msft", "U+1F40B	"],
+    ["🐬", "amzn", "U+1F42C	"],
+    ["🐟", "goog", "U+1F41F	"],
+    ["🐠", "baba", "U+1F420	"],
+    ["🐡", "fb", "U+1F421	"],
+    ["🦈", "tsla", "U+1F988	"],
+    ["🐙", "crm", "U+1F419	"],
+    ["🐚", "ea", "U+1F41A	"],
   ];
 
   const handleClick = (emoji) => {
@@ -23,7 +23,6 @@ function CubePage(props) {
     props.history.push("/charts");
   };
 
-  emojis.map((e) => e[0]);
   return (
     <div className="wrapper">
       <div className="carousel">
@@ -31,7 +30,7 @@ function CubePage(props) {
           <ul>
             {emojis.map((e) => {
               return (
-                <div className="carousel__item">
+                <div className="carousel__item" key={e}>
                   <div className="carousel__item-head">
                     <button onClick={() => handleClick(e)}>{e[0]}</button>
                   </div>

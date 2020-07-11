@@ -7,14 +7,14 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
-import ChartsPage from "./components/ChartsPage";
-import CubeChart from "./components/CubeChart";
+import ChartPage from "./components/ChartPage";
 import CubePage from "./components/cubePage/CubePage";
+import CubePageButtons from "./components/cubePage/CubePageButtons";
 import AboutUs from "./components/AboutUs";
 import LoginPage from "./components/LoginPage";
-import FinanceAPI from "./components/FinanceAPI";
 import { setAuthenticationHeader } from "./utils/Auth";
 import thunk from "redux-thunk";
+// import FinanceAPI from "./components/FinanceAPI";
 // import requireAuth from "./components/requireAuth";
 // import * as actionTypes from "./store/actions/actionTypes";
 // import HomePage from "./components/HomePage"
@@ -50,13 +50,13 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route component={LoginPage} path="/login" exact />
-            <Route component={CubeChart} path="/cube-chart" exact />
             <Route component={CubePage} path="/cube" exact />
             <Route component={AboutUs} path="/about-us" exact />
-            <Route exact path="/charts" component={ChartsPage} />
+            <Route component={CubePageButtons} path="/cube-buttons" exact />
+            <Route exact path="/charts" component={ChartPage} />
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             <Route component={App} path="/" exact />
-            <Route component={FinanceAPI} path="/finance-api" exact />
+            {/* <Route component={FinanceAPI} path="/finance-api" exact /> */}
           </Switch>
         </BaseLayout>
       </BrowserRouter>
