@@ -34,21 +34,18 @@ function NavBar(props) {
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/cube-chart">
-            <Nav.Link>Cube Chart</Nav.Link>
-          </LinkContainer>
           <LinkContainer to="/cube">
             <Nav.Link>Cube</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/charts">
-            <Nav.Link>Charts</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/finance-api">
-            <Nav.Link>Finance API</Nav.Link>
+          <LinkContainer to="/cube-buttons">
+            <Nav.Link>Cube Buttons</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/about-us">
             <Nav.Link>About Us</Nav.Link>
           </LinkContainer>
+          {/* <LinkContainer to="/finance-api">
+            <Nav.Link>Finance API</Nav.Link>
+          </LinkContainer> */}
           {/* {props.isLoggedIn ? (
             <LinkContainer to="/charts">
               <Nav.Link>Charts</Nav.Link>

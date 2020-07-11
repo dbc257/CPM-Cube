@@ -17,10 +17,9 @@ function FinanceList(props) {
   const financeItems = financials.map((financeItem) => {
     return (
       <li>
-        {"Gross Profit:"} {financeItem.grossProfit} {"USD"},{" Revenue:"}{" "}
-        {financeItem.revenue}
-        {"USD"},{" Operating Income:"} {financeItem.operatingIncome}
-        {"USD"}
+        {"Date:"} {financeItem.date},{" Revenue:"} {financeItem.revenue},{" "}
+        {"USD"},{" Expenses:"} {financeItem.costAndExpenses} {"USD"},
+        {" Gross Profit:"} {financeItem.grossProfit} {"USD"},
       </li>
     );
   });

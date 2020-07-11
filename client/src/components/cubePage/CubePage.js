@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import "./CubePage.css";
+import "./CubePage.scss";
 
 function CubePage(props) {
   // {pass in props onclick}
@@ -20,11 +20,10 @@ function CubePage(props) {
 
   const handleClick = (emoji) => {
     props.buttonChoice(emoji);
-    console.log(emoji)
+    console.log(emoji);
     props.history.push("/charts");
   };
 
-  
   return (
     <div className="wrapper">
       <div className="carousel">
@@ -32,7 +31,7 @@ function CubePage(props) {
           <ul>
             {emojis.map((e) => {
               return (
-                <div className="carousel__item">
+                <div className="carousel__item" key={e}>
                   <div className="carousel__item-head">
                     <button onClick={() => handleClick(e)}>{e[0]}</button>
                   </div>

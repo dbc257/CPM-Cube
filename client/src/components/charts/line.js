@@ -1,6 +1,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 var createReactClass = require("create-react-class");
+
 const data = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
   datasets: [
@@ -27,6 +28,26 @@ const data = {
     },
   ],
 };
+const options = {
+  scales: {
+    yAxes: [
+      {
+        scaleLabel: {
+          display: true,
+          labelString: "Dollar Amount",
+        },
+      },
+    ],
+    xAxes: [
+      {
+        scaleLabel: {
+          display: true,
+          labelString: "Month",
+        },
+      },
+    ],
+  },
+};
 
 export default createReactClass({
   displayName: "LineExample",
@@ -35,7 +56,7 @@ export default createReactClass({
     return (
       <div>
         <h2>Line Example</h2>
-        <Line data={data} />
+        <Line data={data} options={options} />
       </div>
     );
   },
