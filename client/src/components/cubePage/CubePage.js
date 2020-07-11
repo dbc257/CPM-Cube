@@ -20,6 +20,7 @@ function CubePage(props) {
 
   const handleClick = (emoji) => {
     props.buttonChoice(emoji);
+    console.log(emoji);
     props.history.push("/charts");
   };
 
