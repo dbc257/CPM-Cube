@@ -107,11 +107,19 @@ export class Login extends React.Component {
             </div>
           </div>
         </div>
-        <button onClick={this.handleLoginPost} type="button" className="btn">
+        <button
+          onClick={this.handleLoginPost}
+          type="button"
+          className="login-btn"
+        >
           Login
         </button>
         <hr />
-        <button onClick={this.handleGuestPost} type="button" className="btn">
+        <button
+          onClick={this.handleGuestPost}
+          type="button"
+          className="login-btn"
+        >
           Guest Login
         </button>
       </div>

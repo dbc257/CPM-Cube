@@ -5,7 +5,7 @@ import App from "./App";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
 import ChartPage from "./components/ChartPage";
 import CubePage from "./components/cubePage/CubePage";

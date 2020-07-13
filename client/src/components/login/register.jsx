@@ -65,7 +65,7 @@ export class Register extends React.Component {
             <button
               onClick={this.handleRegisterPost}
               type="button"
-              className="btn"
+              className="login-btn"
             >
               Register
             </button>

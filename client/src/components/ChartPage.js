@@ -9,15 +9,24 @@ function ChartPage(props) {
 
   useEffect(() => {
     fetch(
-      `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=ebfb009cc4e9d8c8309b0ce2cf086c63`
+      `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77`
     )
       .then((response) => response.json())
       .then((result) => {
         setFinancials(result);
+        fetch("http://localhost:3001/chart-data", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(result),
+        });
       });
   }, [props.chosenOrg]);
 
   const labelsDate = financials.map((financeDate) => {
+    // console.log(new Date(financeDate.date).getFullYear());
+    console.log(new Date(financeDate.date));
     return financeDate.date;
   });
   const dataRevenue = financials.map((financeRevenue) => {

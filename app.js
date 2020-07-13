@@ -94,6 +94,62 @@ app.post("/api/login", (req, res) => {
     });
 });
 
+app.post("/chart-data", (req, res) => {
+  // console.log(req.body);
+  // const dummy = {
+  //   date: "2012-06-30",
+  //   symbol: "FB",
+  //   fillingDate: null,
+  //   acceptedDate: "Not found...",
+  //   period: "Q2",
+  //   revenue: 2242000000,
+  //   costOfRevenue: 644000000,
+  //   grossProfit: 1598000000,
+  //   grossProfitRatio: 0.7127564674397859,
+  //   researchAndDevelopmentExpenses: 858000000,
+  //   generalAndAdministrativeExpenses: 567000000,
+  //   sellingAndMarketingExpenses: 535000000,
+  //   otherExpenses: 1138000000,
+  //   operatingExpenses: 3098000000,
+  //   costAndExpenses: 2604000000,
+  //   interestExpense: 0,
+  //   depreciationAndAmortization: 249000000,
+  //   ebitda: -113000000,
+  //   ebitdaratio: -0.0504014272971,
+  //   operatingIncome: -362000000,
+  //   operatingIncomeRatio: -0.161462979483,
+  //   totalOtherIncomeExpensesNet: 0,
+  //   incomeBeforeTax: -383000000,
+  //   incomeBeforeTaxRatio: -0.170829616414,
+  //   incomeTaxExpense: -431000000,
+  //   netIncome: 48000000,
+  //   netIncomeRatio: 0.021409455843,
+  //   eps: 0.02,
+  //   epsdiluted: 0.02,
+  //   weightedAverageShsOut: 1792000000,
+  //   weightedAverageShsOutDil: 1792000000,
+  //   link: "updating...",
+  //   finalLink: null,
+  // };
+  req.body.map(async (dummy) => {
+    await models.Company.create({
+      symbol: dummy.symbol,
+      date: dummy.date,
+      revenue: dummy.revenue,
+      costAndExpenses: dummy.costAndExpenses,
+      grossProfit: dummy.costAndExpenses,
+    });
+  });
+  // await models.Company.create({
+  //   symbol: dummy.symbol,
+  //   date: dummy.date,
+  //   revenue: dummy.revenue,
+  //   costAndExpenses: dummy.costAndExpenses,
+  //   grossProfit: dummy.costAndExpenses,
+  // });
+  res.send("Success");
+});
+
 const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
