@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useMemo, useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -24,6 +24,9 @@ import thunk from "redux-thunk";
 // import requireAuth from "./components/requireAuth";
 // import * as actionTypes from "./store/actions/actionTypes";
 // import HomePage from "./components/HomePage"
+
+import * as THREE from "three"
+import { Canvas, useFrame } from 'react-three-fiber'
 
 import buttonReducer from "./store/reducers/buttons";
 import loginReducer from "./store/reducers/login";
