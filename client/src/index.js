@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
 import ChartPage from "./components/ChartPage";
+
 import ChartsPageProfitFB2019 from "./components/ChartsPageProfitFB2019";
 import ChartsPageProfitFB2018 from "./components/ChartsPageProfitFB2018";
 import ChartsPageProfitFB2017 from "./components/ChartsPageProfitFB2017";
@@ -17,6 +18,26 @@ import ChartsPageExpensesFB2017 from "./components/ChartsPageExpensesFB2017";
 import ChartsPageRevenueFB2019 from "./components/ChartsPageRevenueFB2019";
 import ChartsPageRevenueFB2018 from "./components/ChartsPageRevenueFB2018";
 import ChartsPageRevenueFB2017 from "./components/ChartsPageRevenueFB2017";
+
+import ChartsPageProfitAAPL2019 from "./components/ChartsPageProfitAAPL2019";
+import ChartsPageProfitAAPL2018 from "./components/ChartsPageProfitAAPL2018";
+import ChartsPageProfitAAPL2017 from "./components/ChartsPageProfitAAPL2017";
+import ChartsPageExpensesAAPL2019 from "./components/ChartsPageExpensesAAPL2019";
+import ChartsPageExpensesAAPL2018 from "./components/ChartsPageExpensesAAPL2018";
+import ChartsPageExpensesAAPL2017 from "./components/ChartsPageExpensesAAPL2017";
+import ChartsPageRevenueAAPL2019 from "./components/ChartsPageRevenueAAPL2019";
+import ChartsPageRevenueAAPL2018 from "./components/ChartsPageRevenueAAPL2018";
+import ChartsPageRevenueAAPL2017 from "./components/ChartsPageRevenueAAPL2017";
+
+import ChartsPageProfitTSLA2019 from "./components/ChartsPageProfitTSLA2019";
+import ChartsPageProfitTSLA2018 from "./components/ChartsPageProfitTSLA2018";
+import ChartsPageProfitTSLA2017 from "./components/ChartsPageProfitTSLA2017";
+import ChartsPageExpensesTSLA2019 from "./components/ChartsPageExpensesTSLA2019";
+import ChartsPageExpensesTSLA2018 from "./components/ChartsPageExpensesTSLA2018";
+import ChartsPageExpensesTSLA2017 from "./components/ChartsPageExpensesTSLA2017";
+import ChartsPageRevenueTSLA2019 from "./components/ChartsPageRevenueTSLA2019";
+import ChartsPageRevenueTSLA2018 from "./components/ChartsPageRevenueTSLA2018";
+import ChartsPageRevenueTSLA2017 from "./components/ChartsPageRevenueTSLA2017";
 
 // import ChartsPageExpenses from "./components/ChartsPageExpenses";
 // import ChartsPageRevenue from "./components/ChartsPageRevenue";
@@ -108,8 +129,98 @@ ReactDOM.render(
             />
             <Route
               exact
-              path="/facebook/charts-revenue-fb2018"
+              path="/facebook/charts-revenue-fb2017"
               component={ChartsPageRevenueFB2017}
+            />
+            <Route
+              exact
+              path="/apple/charts-profit-aapl2019"
+              component={ChartsPageProfitAAPL2019}
+            />
+            <Route
+              exact
+              path="/apple/charts-profit-aapl2018"
+              component={ChartsPageProfitAAPL2018}
+            />
+            <Route
+              exact
+              path="/apple/charts-profit-aapl2017"
+              component={ChartsPageProfitAAPL2017}
+            />
+            <Route
+              exact
+              path="/apple/charts-expenses-aapl2019"
+              component={ChartsPageExpensesAAPL2019}
+            />
+            <Route
+              exact
+              path="/apple/charts-expenses-aapl2018"
+              component={ChartsPageExpensesAAPL2018}
+            />
+            <Route
+              exact
+              path="/apple/charts-expenses-aapl2017"
+              component={ChartsPageExpensesAAPL2017}
+            />
+            <Route
+              exact
+              path="/apple/charts-revenue-aapl2019"
+              component={ChartsPageRevenueAAPL2019}
+            />
+            <Route
+              exact
+              path="/apple/charts-revenue-aapl2018"
+              component={ChartsPageRevenueAAPL2018}
+            />
+            <Route
+              exact
+              path="/apple/charts-revenue-aapl2017"
+              component={ChartsPageRevenueAAPL2017}
+            />
+            <Route
+              exact
+              path="/tesla/charts-profit-tsla2019"
+              component={ChartsPageProfitTSLA2019}
+            />
+            <Route
+              exact
+              path="/tesla/charts-profit-tsla2018"
+              component={ChartsPageProfitTSLA2018}
+            />
+            <Route
+              exact
+              path="/tesla/charts-profit-tsla2017"
+              component={ChartsPageProfitTSLA2017}
+            />
+            <Route
+              exact
+              path="/tesla/charts-expenses-tsla2019"
+              component={ChartsPageExpensesTSLA2019}
+            />
+            <Route
+              exact
+              path="/tesla/charts-expenses-tsla2018"
+              component={ChartsPageExpensesTSLA2018}
+            />
+            <Route
+              exact
+              path="/tesla/charts-expenses-tsla2017"
+              component={ChartsPageExpensesTSLA2017}
+            />
+            <Route
+              exact
+              path="/tesla/charts-revenue-tsla2019"
+              component={ChartsPageRevenueTSLA2019}
+            />
+            <Route
+              exact
+              path="/tesla/charts-revenue-tsla2018"
+              component={ChartsPageRevenueTSLA2018}
+            />
+            <Route
+              exact
+              path="/tesla/charts-revenue-tsla2017"
+              component={ChartsPageRevenueTSLA2017}
             />
             {/* <Route exact path="/charts-revenue" component={ChartsPageRevenue} /> */}
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}

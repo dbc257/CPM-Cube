@@ -26,6 +26,10 @@ const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
 const FacebookDataRouter = require("./routes/facebook");
 app.use("/facebook", FacebookDataRouter);
+const AppleDataRouter = require("./routes/apple");
+app.use("/apple", AppleDataRouter);
+const TeslaDataRouter = require("./routes/tesla");
+app.use("/tesla", TeslaDataRouter);
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {

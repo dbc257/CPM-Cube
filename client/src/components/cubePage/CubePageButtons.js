@@ -14,7 +14,7 @@ function CubePage(props) {
 
   // const emojis = [
   //   ["🐳", "Facebook", "FB"],
-  //   ["🐋", "Apple Inc.", "APPL"],
+  //   ["🐋", "Apple Inc.", "AAPL"],
   //   ["🐬", "American Airlines Group Inc.", "AAL"],
   //   ["🐟", "Tesla, Inc.", "TSLA"],
   //   ["🐠", "Amazon.com, Inc.", "AMZN"],
@@ -83,7 +83,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/facebook/charts-expense-fb2019"
+                  to="/facebook/charts-expenses-fb2019"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -91,7 +91,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/facebook/charts-expense-fb2018"
+                  to="/facebook/charts-expenses-fb2018"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -99,7 +99,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/facebook/charts-expense-fb2017"
+                  to="/facebook/charts-expenses-fb2017"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -141,7 +141,7 @@ function CubePage(props) {
             <ButtonGroup vertical>
               <ButtonGroup>
                 <LinkContainer
-                  to="/apple/charts-profit-appl2019"
+                  to="/apple/charts-profit-aapl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -149,7 +149,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-profit-appl2018"
+                  to="/apple/charts-profit-aapl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -157,7 +157,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-profit-appl2017"
+                  to="/apple/charts-profit-aapl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -168,7 +168,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/apple/charts-expenses-appl2019"
+                  to="/apple/charts-expenses-aapl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -176,7 +176,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-expenses-appl2018"
+                  to="/apple/charts-expenses-aapl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large" k>
@@ -184,7 +184,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-expenses-appl2017"
+                  to="/apple/charts-expenses-aapl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -195,7 +195,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/apple/charts-revenue-appl2019"
+                  to="/apple/charts-revenue-aapl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -203,7 +203,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-revenue-appl2018"
+                  to="/apple/charts-revenue-aapl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -211,7 +211,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/apple/charts-revenue-appl2017"
+                  to="/apple/charts-revenue-aapl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -306,7 +306,7 @@ function CubePage(props) {
               </ButtonGroup>
             </ButtonGroup>
           </div>
-          <br />
+          {/* <br />
           <div>
             <h5>Press Buttons below to add API data to the Company database</h5>
             <br />
@@ -340,7 +340,7 @@ function CubePage(props) {
                 </Button>
               </LinkContainer>
             </ButtonGroup>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
