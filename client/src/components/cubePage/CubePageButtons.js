@@ -50,6 +50,39 @@ function CubePage(props) {
           <h4>The Business Intelligence Cube (BIC)</h4>
           <br />
           <div>
+            <ButtonGroup justified>
+              <LinkContainer to="/facebook/charts-fb">
+                <Button
+                  onClick={() => handleClick(FB)}
+                  variant="success"
+                  bsSize="large"
+                >
+                  Facebook 2019-2017
+                </Button>
+              </LinkContainer>
+              <LinkContainer to="/apple/charts-aapl">
+                <Button
+                  onClick={() => handleClick(AAPL)}
+                  variant="warning"
+                  bsSize="large"
+                >
+                  Apple, Inc. 2019-2017
+                </Button>
+              </LinkContainer>
+
+              <LinkContainer to="/tesla/charts-tsla">
+                <Button
+                  onClick={() => handleClick(TSLA)}
+                  variant="danger"
+                  bsSize="large"
+                >
+                  Tesla, Inc. 2019-2017
+                </Button>
+              </LinkContainer>
+            </ButtonGroup>
+          </div>
+          <br />
+          <div>
             <ButtonGroup vertical>
               <ButtonGroup>
                 <LinkContainer
@@ -136,7 +169,7 @@ function CubePage(props) {
               </ButtonGroup>
             </ButtonGroup>
           </div>
-          <br />
+          {/* <br /> */}
           <div>
             <ButtonGroup vertical>
               <ButtonGroup>
@@ -221,7 +254,7 @@ function CubePage(props) {
               </ButtonGroup>
             </ButtonGroup>
           </div>
-          <br />
+          {/* <br /> */}
           <div>
             <ButtonGroup vertical>
               <ButtonGroup>
@@ -306,42 +339,8 @@ function CubePage(props) {
               </ButtonGroup>
             </ButtonGroup>
           </div>
-          <br />
-          <div>
-            <h5>Press Buttons below to see financial data from 2019-2017</h5>
-            <br />
-            <ButtonGroup justified>
-              <LinkContainer to="/facebook/charts-fb">
-                <Button
-                  onClick={() => handleClick(FB)}
-                  variant="success"
-                  bsSize="large"
-                >
-                  Facebook 2019-2017
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/apple/charts-aapl">
-                <Button
-                  onClick={() => handleClick(AAPL)}
-                  variant="warning"
-                  bsSize="large"
-                >
-                  Apple, Inc. 2019-2017
-                </Button>
-              </LinkContainer>
 
-              <LinkContainer to="/tesla/charts-tsla">
-                <Button
-                  onClick={() => handleClick(TSLA)}
-                  variant="danger"
-                  bsSize="large"
-                >
-                  Tesla, Inc. 2019-2017
-                </Button>
-              </LinkContainer>
-            </ButtonGroup>
-          </div>
-          <br />
+          {/* <br />
           <div>
             <h5>Press Buttons below to add API data to the Company database</h5>
             <br />
@@ -375,7 +374,7 @@ function CubePage(props) {
                 </Button>
               </LinkContainer>
             </ButtonGroup>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
@@ -476,3 +475,5 @@ export default connect(null, mapDispatchToProps)(CubePage);
               </Button>
             </LinkContainer>
           </div> */
+/* <h5>Press Buttons below to see financial data from 2019-2017</h5>
+            <br /> */

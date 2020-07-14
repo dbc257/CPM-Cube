@@ -6,7 +6,7 @@ import "./ChartsPage.css";
 
 function ChartPage(props) {
   const [financials, setFinancials] = useState([]);
-  // https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77
+  //                 https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77
   useEffect(() => {
     fetch(
       `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77`
@@ -23,15 +23,6 @@ function ChartPage(props) {
         });
       });
   }, [props.chosenOrg]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/chart-data")
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       console.log(result);
-  //       setFinancials(result);
-  //     });
-  // }, []);
 
   const labelsDate = financials.map((financeDate) => {
     return financeDate.date;
@@ -123,23 +114,9 @@ function ChartPage(props) {
           <h2>{props.chosenOrg}</h2>
         </div>
       </div>
-      {/* <Bar data={barDataRevenue} options={options} width={3} height={1} /> */}
       <Bar data={barDataProfit} options={options} />
       <Bar data={barDataExpenses} options={options} />
       <Bar data={barDataRevenue} options={options} />
-
-      {/* <Bar data={barDataExpenses} options={options} width={3} height={1} /> */}
-
-      {/* <Bar data={barDataProfit} options={options} width={3} height={1} /> */}
-      {/* <Bar
-        data={barDataProfitFB}
-        options={optionsFB}
-        width={100}
-        height={50}
-        options={{
-          maintainAspectRatio: false,
-        }}
-      /> */}
     </div>
   );
 }
