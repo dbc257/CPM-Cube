@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/creators/actionCreators";
+import { LinkContainer } from "react-router-bootstrap";
+import Button from "react-bootstrap/Button";
 // var createReactClass = require("create-react-class");
 
 function ChartPage(props) {
@@ -24,9 +26,18 @@ function ChartPage(props) {
       });
   }, [props.chosenOrg]);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/chart-data")
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //       setFinancials(result);
+  //     });
+  // }, []);
+
   const labelsDate = financials.map((financeDate) => {
     // console.log(new Date(financeDate.date).getFullYear());
-    console.log(new Date(financeDate.date));
+    // console.log(new Date(financeDate.date));
     return financeDate.date;
   });
   const dataRevenue = financials.map((financeRevenue) => {
@@ -112,12 +123,17 @@ function ChartPage(props) {
   return (
     <div>
       <h2>{props.chosenOrg}</h2>
-      {/* <Bar data={barDataRevenueFB} options={optionsFB} /> */}
-      <Bar data={barDataRevenue} options={options} width={3} height={1} />
-      {/* <Bar data={barDataExpensesFB} options={optionsFB} /> */}
-      <Bar data={barDataExpenses} options={options} width={3} height={1} />
-      {/* <Bar data={barDataProfit} options={options} /> */}
-      <Bar data={barDataProfit} options={options} width={3} height={1} />
+      <LinkContainer to="/cube-buttons">
+        <Button variant="link">Back to Cube</Button>
+      </LinkContainer>
+      {/* <Bar data={barDataRevenue} options={options} width={3} height={1} /> */}
+      <Bar data={barDataProfit} options={options} />
+      <Bar data={barDataExpenses} options={options} />
+      <Bar data={barDataRevenue} options={options} />
+
+      {/* <Bar data={barDataExpenses} options={options} width={3} height={1} /> */}
+
+      {/* <Bar data={barDataProfit} options={options} width={3} height={1} /> */}
       {/* <Bar
         data={barDataProfitFB}
         options={optionsFB}

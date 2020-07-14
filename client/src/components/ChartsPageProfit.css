@@ -1,0 +1,23 @@
+.chart-info {
+  width: 500px;
+  height: 500px;
+  background-color: burlywood;
+}
+
+h2 {
+  color: seashell;
+  margin-top: 7px;
+}
+
+/* .fb-btn {
+  margin-right: 50ox;
+} */
+
+.fb-wrapper {
+  background: linear-gradient(60deg, #420285, #08bdbd);
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: seashell;
+}

@@ -8,6 +8,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import BaseLayout from "./containers/BaseLayout";
 import ChartPage from "./components/ChartPage";
+import ChartsPageProfitFB2019 from "./components/ChartsPageProfitFB2019";
+import ChartsPageProfitFB2018 from "./components/ChartsPageProfitFB2018";
+import ChartsPageProfitFB2017 from "./components/ChartsPageProfitFB2017";
+
+import ChartsPageExpenses from "./components/ChartsPageExpenses";
+import ChartsPageRevenue from "./components/ChartsPageRevenue";
 import CubePage from "./components/cubePage/CubePage";
 import CubePageButtons from "./components/cubePage/CubePageButtons";
 import AboutUs from "./components/AboutUs";
@@ -53,7 +59,28 @@ ReactDOM.render(
             <Route component={CubePage} path="/cube" exact />
             <Route component={AboutUs} path="/about-us" exact />
             <Route component={CubePageButtons} path="/cube-buttons" exact />
-            <Route exact path="/charts" component={ChartPage} />
+            <Route exact path="/charts-data" component={ChartPage} />
+            <Route
+              exact
+              path="/charts-profit-fb2019"
+              component={ChartsPageProfitFB2019}
+            />
+            <Route
+              exact
+              path="/charts-profit-fb2018"
+              component={ChartsPageProfitFB2018}
+            />
+            <Route
+              exact
+              path="/charts-profit-fb2017"
+              component={ChartsPageProfitFB2017}
+            />
+            <Route
+              exact
+              path="/charts-expenses"
+              component={ChartsPageExpenses}
+            />
+            <Route exact path="/charts-revenue" component={ChartsPageRevenue} />
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             <Route component={App} path="/" exact />
             {/* <Route component={FinanceAPI} path="/finance-api" exact /> */}

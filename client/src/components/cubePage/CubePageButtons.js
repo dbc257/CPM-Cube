@@ -46,41 +46,47 @@ function CubePage(props) {
     <>
       <div className="wrapper">
         <div>
+          <br />
+          <h4>The Business Intelligence Cube (BIC)</h4>
+          <br />
           <div>
             <ButtonGroup vertical>
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
-                  to="/fb-profit-charts-2019"
+                  to="/charts-profit-fb2019"
+                  // to="/fb-profit-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Facebook - Profit - 2019
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-profit-charts-2019"
+                  to="/charts-profit-fb2018"
+                  // to="/fb-profit-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Facebook - Profit - 2018
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-profit-charts-2018"
+                  to="/charts-profit-fb2017"
+                  // to="/fb-profit-charts-2018"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Facebook - Profit - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/fb-expense-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Facebook - Expenses - 2019
                   </Button>
                 </LinkContainer>
@@ -88,7 +94,7 @@ function CubePage(props) {
                   to="/fb-expense-charts-2018"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Facebook - Expenses - 2018
                   </Button>
                 </LinkContainer>
@@ -96,18 +102,18 @@ function CubePage(props) {
                   to="/fb-expense-charts-2017"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Facebook - Expenses - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/fb-revenue-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Facebook - Revenue - 2019
                   </Button>
                 </LinkContainer>
@@ -115,7 +121,7 @@ function CubePage(props) {
                   to="/fb-revenue-charts-2018"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Facebook - Revenue - 2018
                   </Button>
                 </LinkContainer>
@@ -123,54 +129,22 @@ function CubePage(props) {
                   to="/fb-revenue-charts-2017"
                   onClick={() => handleClick(FB)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Facebook - Revenue - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
             </ButtonGroup>
-
-            {/* <div>
-              <LinkContainer
-                to="/fb-profit-charts-2019"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="success">
-                  Facebook - Profit - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-            {/* <div>
-              <LinkContainer
-                to="/fb-expense-charts-2019"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="warning">
-                  Facebook - Expenses - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-            {/* <div>
-              <LinkContainer
-                to="/fb-revenue-charts-2019"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="danger">
-                  Facebook - Revenue - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
           </div>
           <br />
-
           <div>
             <ButtonGroup vertical>
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/appl-profit-charts-2019"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Apple, Inc. - Profit - 2019
                   </Button>
                 </LinkContainer>
@@ -178,7 +152,7 @@ function CubePage(props) {
                   to="/appl-profit-charts-2018"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Apple, Inc. - Profit - 2018
                   </Button>
                 </LinkContainer>
@@ -186,18 +160,18 @@ function CubePage(props) {
                   to="/appl-profit-charts-2017"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Apple, Inc. - Profit - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/appl-expense-charts-2019"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Apple, Inc. - Expenses - 2019
                   </Button>
                 </LinkContainer>
@@ -205,7 +179,7 @@ function CubePage(props) {
                   to="/appl-expense-charts-2018"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large" k>
                     Apple, Inc. - Expenses - 2018
                   </Button>
                 </LinkContainer>
@@ -213,18 +187,18 @@ function CubePage(props) {
                   to="/appl-expense-charts-2017"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Apple, Inc. - Expenses - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/appl-revenue-charts-2019"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Apple, Inc. - Revenue - 2019
                   </Button>
                 </LinkContainer>
@@ -232,7 +206,7 @@ function CubePage(props) {
                   to="/appl-revenue-charts-2018"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Apple, Inc. - Revenue - 2018
                   </Button>
                 </LinkContainer>
@@ -240,24 +214,22 @@ function CubePage(props) {
                   to="/appl-revenue-charts-2017"
                   onClick={() => handleClick(AAPL)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Apple, Inc. - Revenue - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
             </ButtonGroup>
           </div>
-
           <br />
-
           <div>
             <ButtonGroup vertical>
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/tsla-profit-charts-2019"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Tesla, Inc. - Profit - 2019
                   </Button>
                 </LinkContainer>
@@ -265,7 +237,7 @@ function CubePage(props) {
                   to="/tsla-profit-charts-2018"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Tesla, Inc. - Profit - 2018
                   </Button>
                 </LinkContainer>
@@ -273,18 +245,18 @@ function CubePage(props) {
                   to="/tsla-profit-charts-2017"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="success">
+                  <Button type="button" variant="success" bsSize="large">
                     Tesla, Inc. - Profit - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/tsla-expense-charts-2019"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Tesla, Inc. - Expenses - 2019
                   </Button>
                 </LinkContainer>
@@ -292,7 +264,7 @@ function CubePage(props) {
                   to="/tsla-expense-charts-2018"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Tesla, Inc. - Expenses - 2018
                   </Button>
                 </LinkContainer>
@@ -300,18 +272,18 @@ function CubePage(props) {
                   to="/tsla-expense-charts-2017"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="warning">
+                  <Button type="button" variant="warning" bsSize="large">
                     Tesla, Inc. - Expenses - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
 
-              <ButtonGroup bsSize="large">
+              <ButtonGroup>
                 <LinkContainer
                   to="/tsla-revenue-charts-2019"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Tesla, Inc. - Revenue - 2019
                   </Button>
                 </LinkContainer>
@@ -319,7 +291,7 @@ function CubePage(props) {
                   to="/tsla-revenue-charts-2018"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Tesla, Inc. - Revenue - 2018
                   </Button>
                 </LinkContainer>
@@ -327,276 +299,48 @@ function CubePage(props) {
                   to="/tsla-revenue-charts-2017"
                   onClick={() => handleClick(TSLA)}
                 >
-                  <Button type="button" variant="danger">
+                  <Button type="button" variant="danger" bsSize="large">
                     Tesla, Inc. - Revenue - 2017
                   </Button>
                 </LinkContainer>
               </ButtonGroup>
             </ButtonGroup>
-
-            {/* <div>
-              <LinkContainer
-                to="/appl-profit-charts-2019"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="success">
-                  Apple, Inc. - Profit - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-            {/* <div>
-              <LinkContainer
-                to="/appl-expense-charts-2019"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="warning">
-                  Apple, Inc. - Expenses - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-            {/* <div>
-              <LinkContainer
-                to="/appl-revenue-charts-2019"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="danger">
-                  Apple, Inc. - Revenue - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
           </div>
-          {/* <br />
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-profit-charts-2019"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="success">
-                  Tesla, Inc. - Profit - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-expense-charts-2019"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="warning">
-                  Tesla, Inc. - Expenses - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-revenue-charts-2019"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="danger">
-                  Tesla, Inc. - Revenue - 2019
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* </div>
-        </div>
-        <div>
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-profit-charts-2019"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="success">
-                  Facebook - Profit - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-expense-charts-2018"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="warning">
-                  Facebook - Expenses - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-revenue-charts-2018"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="danger">
-                  Facebook - Revenue - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-        </div>
-        <br />
-        <div>
-          {/* <div>
-              <LinkContainer
-                to="/appl-profit-charts-2018"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="success">
-                  Apple, Inc. - Profit - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/appl-expense-charts-2018"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="warning">
-                  Apple, Inc. - Expenses - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/appl-revenue-charts-2018"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="danger">
-                  Apple, Inc. - Revenue - 2018
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* </div>
           <br />
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-profit-charts-2018"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="success">
-                  Tesla, Inc. - Profit - 2018
+          <div>
+            <h5>Press Buttons below to add API data to the Company database</h5>
+            <br />
+            <ButtonGroup justified>
+              <LinkContainer to="/charts-data">
+                <Button
+                  onClick={() => handleClick(FB)}
+                  variant="success"
+                  bsSize="large"
+                >
+                  Facebook
                 </Button>
               </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-expense-charts-2018"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="warning">
-                  Tesla, Inc. - Expenses - 2018
+              <LinkContainer to="/charts-data">
+                <Button
+                  onClick={() => handleClick(AAPL)}
+                  variant="warning"
+                  bsSize="large"
+                >
+                  Apple Inc.
                 </Button>
               </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-revenue-charts-2018"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="danger">
-                  Tesla, Inc. - Revenue - 2018
+
+              <LinkContainer to="/charts-data">
+                <Button
+                  onClick={() => handleClick(TSLA)}
+                  variant="danger"
+                  bsSize="large"
+                >
+                  Tesla, Inc.
                 </Button>
               </LinkContainer>
-            </div> */}
-          {/* </div>
-        </div>
-        <div>
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-profit-charts-2018"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="success">
-                  Facebook - Profit - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-expense-charts-2017"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="warning">
-                  Facebook - Expenses - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/fb-revenue-charts-2017"
-                onClick={() => handleClick(FB)}
-              >
-                <Button type="button" variant="danger">
-                  Facebook - Revenue - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* </div>
-          <br />
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/appl-profit-charts-2017"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="success">
-                  Apple, Inc. - Profit - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/appl-expense-charts-2017"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="warning">
-                  Apple, Inc. - Expenses - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/appl-revenue-charts-2017"
-                onClick={() => handleClick(AAPL)}
-              >
-                <Button type="button" variant="danger">
-                  Apple, Inc. - Revenue - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* </div>
-          <br />
-          <div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-profit-charts-2017"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="success">
-                  Tesla, Inc. - Profit - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-expense-charts-2017"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="warning">
-                  Tesla, Inc. - Expenses - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
-          {/* <div>
-              <LinkContainer
-                to="/tsla-revenue-charts-2017"
-                onClick={() => handleClick(TSLA)}
-              >
-                <Button type="button" variant="danger">
-                  Tesla, Inc. - Revenue - 2017
-                </Button>
-              </LinkContainer>
-            </div> */}
+            </ButtonGroup>
+          </div>
         </div>
       </div>
     </>
@@ -641,8 +385,17 @@ export default connect(null, mapDispatchToProps)(CubePage);
 //           %p.title #{i[1]}
 //           %p Unicode: #{i[2]}
 /* <div>
-            <LinkContainer to="/charts">
+              <LinkContainer to="/charts-data">
+              <Button onClick={() => handleClick(FB)}>
+                Facebook
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/charts-data">
               <Button onClick={() => handleClick(AAPL)}>Apple Inc.</Button>
+            </LinkContainer>
+          
+            <LinkContainer to="/charts-data">
+              <Button onClick={() => handleClick(TSLA)}>Tesla, Inc.</Button>
             </LinkContainer>
           </div>
           <div>
@@ -652,11 +405,7 @@ export default connect(null, mapDispatchToProps)(CubePage);
               </Button>
             </LinkContainer>
           </div> 
-          <div>
-            <LinkContainer to="/charts">
-              <Button onClick={() => handleClick(TSLA)}>Tesla, Inc.</Button>
-            </LinkContainer>
-          </div>
+         
           <div>
             <LinkContainer to="/charts">
               <Button onClick={() => handleClick(AMZN)}>
