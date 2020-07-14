@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const models = require("./models");
 const auth = require("./middlewares/authMiddleware.js");
+const { Op } = require("sequelize");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
@@ -23,6 +24,12 @@ const BarDataRouter = require("./routes/bar");
 app.use("/api/bar", BarDataRouter);
 const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
+const FacebookDataRouter = require("./routes/facebook");
+app.use("/facebook", FacebookDataRouter);
+const AppleDataRouter = require("./routes/apple");
+app.use("/apple", AppleDataRouter);
+const TeslaDataRouter = require("./routes/tesla");
+app.use("/tesla", TeslaDataRouter);
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {
@@ -51,8 +58,6 @@ app.post("/register", (req, res) => {
     }
   });
 });
-
-module.exports = router;
 
 app.post("/api/login", (req, res) => {
   console.log(req.body);
@@ -93,6 +98,45 @@ app.post("/api/login", (req, res) => {
       }
     });
 });
+
+app.post("/chart-data", (req, res) => {
+  req.body.map(async (dummy) => {
+    await models.Company.create({
+      symbol: dummy.symbol,
+      date: dummy.date,
+      revenue: dummy.revenue,
+      costAndExpenses: dummy.costAndExpenses,
+      grossProfit: dummy.grossProfit,
+    });
+  });
+  res.send("Success");
+});
+
+// app.post("/chart-data", async (req, res) => {
+//   let symbol = req.body.symbol,
+//   let date = req.body.date,
+//   let revenue = req.body.revenue,
+//   let costAndExpenses = req.body.costAndExpenses,
+//   let grossProfit = req.body.grossProfit
+
+// //   let companyData = {
+// //       symbol: symbol,
+// //       date: date,
+// //       revenue: revenue,
+// //       costAndExpenses: costAndExpenses,
+// //       grossProfit: grossProfit
+// // }
+//   await models.Company.create({
+//     symbol: symbol,
+//       date: date,
+//       revenue: revenue,
+//       costAndExpenses: costAndExpenses,
+//       grossProfit: grossProfit
+//   });
+//   res.send("success");
+// });
+
+// });
 
 const port = process.env.PORT || 3001;
 

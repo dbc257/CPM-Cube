@@ -17,7 +17,7 @@ function NavBar(props) {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <LinkContainer to="/">
+      <LinkContainer to="/cube-buttons">
         <Navbar.Brand>
           <img
             src={brandImg}

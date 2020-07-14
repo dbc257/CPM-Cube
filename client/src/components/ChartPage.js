@@ -2,18 +2,25 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/creators/actionCreators";
-// var createReactClass = require("create-react-class");
+import "./ChartsPage.css";
 
 function ChartPage(props) {
   const [financials, setFinancials] = useState([]);
-
+  //                 https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77
   useEffect(() => {
     fetch(
-      `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=ebfb009cc4e9d8c8309b0ce2cf086c63`
+      `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77`
     )
       .then((response) => response.json())
       .then((result) => {
         setFinancials(result);
+        fetch("http://localhost:3001/chart-data", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(result),
+        });
       });
   }, [props.chosenOrg]);
 
@@ -102,22 +109,14 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <h2>{props.chosenOrg}</h2>
-      {/* <Bar data={barDataRevenueFB} options={optionsFB} /> */}
-      <Bar data={barDataRevenue} options={options} width={3} height={1} />
-      {/* <Bar data={barDataExpensesFB} options={optionsFB} /> */}
-      <Bar data={barDataExpenses} options={options} width={3} height={1} />
-      {/* <Bar data={barDataProfit} options={options} /> */}
-      <Bar data={barDataProfit} options={options} width={3} height={1} />
-      {/* <Bar
-        data={barDataProfitFB}
-        options={optionsFB}
-        width={100}
-        height={50}
-        options={{
-          maintainAspectRatio: false,
-        }}
-      /> */}
+      <div className="charts-wrapper">
+        <div>
+          <h2>{props.chosenOrg}</h2>
+        </div>
+      </div>
+      <Bar data={barDataProfit} options={options} />
+      <Bar data={barDataExpenses} options={options} />
+      <Bar data={barDataRevenue} options={options} />
     </div>
   );
 }

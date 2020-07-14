@@ -10,13 +10,18 @@ $slide-change-timing: 3; // percentage of total animation cycle
   box-sizing: border-box;
 }
 
-p {
-  color: black;
-}
+// p {
+//   color: black;
+// }
 body {
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   height: 90vh;
+  color: black;
+}
+
+.Unicode {
+  color: black;
 }
 
 .wrapper {
@@ -47,6 +52,7 @@ body {
   filter: drop-shadow(0 2px 2px #555);
   will-change: transform, opacity;
   animation: carousel-animate-vertical $animation-timing linear infinite;
+  color: black;
 }
 
 @for $i from 1 through ($carousel-items - 1) {
@@ -88,12 +94,14 @@ body {
   border-radius: 8px;
   // padding: 16px 20px 16px 70px;
   padding: 16px 20px 16px 70px;
+  color: black;
 }
 
 .title {
   text-transform: uppercase;
   font-size: 20px;
   margin-top: 10px;
+  color: black;
 }
 
 @keyframes carousel-animate-vertical {
