@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/creators/actionCreators";
-import { LinkContainer } from "react-router-bootstrap";
-import Button from "react-bootstrap/Button";
-// var createReactClass = require("create-react-class");
+import "./ChartsPage.css";
 
 function ChartPage(props) {
   const [financials, setFinancials] = useState([]);
-
+  // https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77
   useEffect(() => {
     fetch(
       `https://financialmodelingprep.com/api/v3/income-statement/${props.chosenOrg}?period=quarter&apikey=316fd425966e8b9f689229fdcbdeaa77`
@@ -36,8 +34,6 @@ function ChartPage(props) {
   // }, []);
 
   const labelsDate = financials.map((financeDate) => {
-    // console.log(new Date(financeDate.date).getFullYear());
-    // console.log(new Date(financeDate.date));
     return financeDate.date;
   });
   const dataRevenue = financials.map((financeRevenue) => {
@@ -122,10 +118,11 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <h2>{props.chosenOrg}</h2>
-      <LinkContainer to="/cube-buttons">
-        <Button variant="link">Back to Cube</Button>
-      </LinkContainer>
+      <div className="charts-wrapper">
+        <div>
+          <h2>{props.chosenOrg}</h2>
+        </div>
+      </div>
       {/* <Bar data={barDataRevenue} options={options} width={3} height={1} /> */}
       <Bar data={barDataProfit} options={options} />
       <Bar data={barDataExpenses} options={options} />

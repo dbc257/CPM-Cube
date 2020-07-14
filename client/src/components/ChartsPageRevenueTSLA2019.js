@@ -139,7 +139,7 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <div className="fb-wrapper">
+      <div className="charts-wrapper">
         <div>
           <h2>Tesla, Inc. - Quarterly Statement Expenses for 2019</h2>
         </div>

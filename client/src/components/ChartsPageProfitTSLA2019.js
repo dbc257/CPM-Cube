@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import { Pie } from "react-chartjs-2";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/creators/actionCreators";
-import "./ChartsPageProfit.css";
+import "./ChartsPage.css";
 
 function ChartPage(props) {
   const [financials, setFinancials] = useState([]);
@@ -137,7 +137,7 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <div className="fb-wrapper">
+      <div className="charts-wrapper">
         <div>
           <h2>Tesla, Inc. - Quarterly Statement Profits for 2019</h2>
         </div>

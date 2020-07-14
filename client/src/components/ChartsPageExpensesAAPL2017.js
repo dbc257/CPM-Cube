@@ -138,7 +138,7 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <div className="fb-wrapper">
+      <div className="charts-wrapper">
         <div>
           <h2>Apple, Inc. - Quarterly Statement Expenses for 2017</h2>
         </div>

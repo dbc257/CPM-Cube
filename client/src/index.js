@@ -18,6 +18,7 @@ import ChartsPageExpensesFB2017 from "./components/ChartsPageExpensesFB2017";
 import ChartsPageRevenueFB2019 from "./components/ChartsPageRevenueFB2019";
 import ChartsPageRevenueFB2018 from "./components/ChartsPageRevenueFB2018";
 import ChartsPageRevenueFB2017 from "./components/ChartsPageRevenueFB2017";
+import ChartsPageFB from "./components/ChartsPageFB";
 
 import ChartsPageProfitAAPL2019 from "./components/ChartsPageProfitAAPL2019";
 import ChartsPageProfitAAPL2018 from "./components/ChartsPageProfitAAPL2018";
@@ -28,6 +29,7 @@ import ChartsPageExpensesAAPL2017 from "./components/ChartsPageExpensesAAPL2017"
 import ChartsPageRevenueAAPL2019 from "./components/ChartsPageRevenueAAPL2019";
 import ChartsPageRevenueAAPL2018 from "./components/ChartsPageRevenueAAPL2018";
 import ChartsPageRevenueAAPL2017 from "./components/ChartsPageRevenueAAPL2017";
+import ChartsPageAAPL from "./components/ChartsPageAAPL";
 
 import ChartsPageProfitTSLA2019 from "./components/ChartsPageProfitTSLA2019";
 import ChartsPageProfitTSLA2018 from "./components/ChartsPageProfitTSLA2018";
@@ -38,6 +40,7 @@ import ChartsPageExpensesTSLA2017 from "./components/ChartsPageExpensesTSLA2017"
 import ChartsPageRevenueTSLA2019 from "./components/ChartsPageRevenueTSLA2019";
 import ChartsPageRevenueTSLA2018 from "./components/ChartsPageRevenueTSLA2018";
 import ChartsPageRevenueTSLA2017 from "./components/ChartsPageRevenueTSLA2017";
+import ChartsPageTSLA from "./components/ChartsPageTSLA";
 
 // import ChartsPageExpenses from "./components/ChartsPageExpenses";
 // import ChartsPageRevenue from "./components/ChartsPageRevenue";
@@ -86,7 +89,10 @@ ReactDOM.render(
             <Route component={CubePage} path="/cube" exact />
             <Route component={AboutUs} path="/about-us" exact />
             <Route component={CubePageButtons} path="/cube-buttons" exact />
-            <Route exact path="/charts-data" component={ChartPage} />
+            <Route exact path="/chart-data" component={ChartPage} />
+            <Route exact path="/facebook/charts-fb" component={ChartsPageFB} />
+            <Route exact path="/apple/charts-aapl" component={ChartsPageAAPL} />
+            <Route exact path="/tesla/charts-tsla" component={ChartsPageTSLA} />
             <Route
               exact
               path="/facebook/charts-profit-fb2019"

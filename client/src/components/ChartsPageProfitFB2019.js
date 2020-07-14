@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../store/creators/actionCreators";
 // import { LinkContainer } from "react-router-bootstrap";
 // import Button from "react-bootstrap/Button";
-import "./ChartsPageProfit.css";
+import "./ChartsPage.css";
 // import { withRouter } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -166,7 +166,7 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <div className="fb-wrapper">
+      <div className="charts-wrapper">
         {/* <div>
           <LinkContainer to="/cube-buttons">
             <Button
@@ -183,7 +183,7 @@ function ChartPage(props) {
           <h2>Facebook - Quarterly Statement Profits for 2019</h2>
         </div>
       </div>
-      {/* <div className="fb-wrapper">
+      {/* <div className="charts-wrapper">
         <h2>Facebook</h2>
         <LinkContainer to="/cube-buttons">
           <Button variant="link">Back to Cube</Button>

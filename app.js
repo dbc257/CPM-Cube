@@ -59,8 +59,6 @@ app.post("/register", (req, res) => {
   });
 });
 
-module.exports = router;
-
 app.post("/api/login", (req, res) => {
   console.log(req.body);
   let username = req.body.username;
@@ -101,18 +99,18 @@ app.post("/api/login", (req, res) => {
     });
 });
 
-// app.post("/chart-data", async (req, res) => {
-//   req.body.map(async (dummy) => {
-//     await models.Company.create({
-//       symbol: dummy.symbol,
-//       date: dummy.date,
-//       revenue: dummy.revenue,
-//       costAndExpenses: dummy.costAndExpenses,
-//       grossProfit: dummy.grossProfit,
-//     });
-//   });
-//   res.send("Success");
-// });
+app.post("/chart-data", (req, res) => {
+  req.body.map(async (dummy) => {
+    await models.Company.create({
+      symbol: dummy.symbol,
+      date: dummy.date,
+      revenue: dummy.revenue,
+      costAndExpenses: dummy.costAndExpenses,
+      grossProfit: dummy.grossProfit,
+    });
+  });
+  res.send("Success");
+});
 
 // app.post("/chart-data", async (req, res) => {
 //   let symbol = req.body.symbol,

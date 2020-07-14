@@ -306,41 +306,76 @@ function CubePage(props) {
               </ButtonGroup>
             </ButtonGroup>
           </div>
-          {/* <br />
+          <br />
           <div>
-            <h5>Press Buttons below to add API data to the Company database</h5>
+            <h5>Press Buttons below to see financial data from 2019-2017</h5>
             <br />
             <ButtonGroup justified>
-              <LinkContainer to="/charts-data">
+              <LinkContainer to="/facebook/charts-fb">
                 <Button
                   onClick={() => handleClick(FB)}
                   variant="success"
                   bsSize="large"
                 >
-                  Facebook
+                  Facebook 2019-2017
                 </Button>
               </LinkContainer>
-              <LinkContainer to="/charts-data">
+              <LinkContainer to="/apple/charts-aapl">
                 <Button
                   onClick={() => handleClick(AAPL)}
                   variant="warning"
                   bsSize="large"
                 >
-                  Apple Inc.
+                  Apple, Inc. 2019-2017
                 </Button>
               </LinkContainer>
 
-              <LinkContainer to="/charts-data">
+              <LinkContainer to="/tesla/charts-tsla">
                 <Button
                   onClick={() => handleClick(TSLA)}
                   variant="danger"
                   bsSize="large"
                 >
-                  Tesla, Inc.
+                  Tesla, Inc. 2019-2017
                 </Button>
               </LinkContainer>
             </ButtonGroup>
-          </div> */}
+          </div>
+          <br />
+          <div>
+            <h5>Press Buttons below to add API data to the Company database</h5>
+            <br />
+            <ButtonGroup justified>
+              <LinkContainer to="/chart-data">
+                <Button
+                  onClick={() => handleClick(FB)}
+                  variant="success"
+                  bsSize="large"
+                >
+                  Facebook API Upload
+                </Button>
+              </LinkContainer>
+              <LinkContainer to="/chart-data">
+                <Button
+                  onClick={() => handleClick(AAPL)}
+                  variant="warning"
+                  bsSize="large"
+                >
+                  Apple, Inc. API Upload
+                </Button>
+              </LinkContainer>
+
+              <LinkContainer to="/chart-data">
+                <Button
+                  onClick={() => handleClick(TSLA)}
+                  variant="danger"
+                  bsSize="large"
+                >
+                  Tesla, Inc. API Upload
+                </Button>
+              </LinkContainer>
+            </ButtonGroup>
+          </div>
         </div>
       </div>
     </>

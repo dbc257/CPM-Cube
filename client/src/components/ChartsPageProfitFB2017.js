@@ -160,7 +160,7 @@ function ChartPage(props) {
   };
   return (
     <div>
-      <div className="fb-wrapper">
+      <div className="charts-wrapper">
         <div>
           <h2>Facebook - Quarterly Statement Profits for 2017</h2>
         </div>
