@@ -111,7 +111,7 @@ function ChartPage(props) {
     <div>
       <div className="charts-wrapper">
         <div>
-          <h2>{props.chosenOrg}</h2>
+          <h3>{props.chosenOrg}</h3>
         </div>
       </div>
       <Bar data={barDataProfit} options={options} />
@@ -155,7 +155,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ChartPage);
 //     render() {
 //       return (
 //         <div>
-//           <h2>Bar Example</h2>
+//           <h3>Bar Example</h3>
 //           <Bar data={this.props.barData} options={options} />
 //         </div>
 //       );
@@ -208,7 +208,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ChartPage);
 //   render() {
 //     return (
 //       <div>
-//         <h2>Bar Example</h2>
+//         <h3>Bar Example</h3>
 //         <Bar data={this.props.barData} options={options} />
 //       </div>
 //     );

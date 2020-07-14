@@ -4,14 +4,9 @@
   background-color: burlywood;
 }
 
-h1 {
+h3 {
   color: seashell;
-  margin-top: 7px;
-}
-
-h2 {
-  color: seashell;
-  margin-top: 7px;
+  margin-top: 15px;
 }
 
 .charts-wrapper {

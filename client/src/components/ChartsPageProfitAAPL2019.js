@@ -139,7 +139,7 @@ function ChartPage(props) {
     <div>
       <div className="charts-wrapper">
         <div>
-          <h2>Apple, Inc. - Quarterly Statement Profits for 2019</h2>
+          <h3>Apple, Inc. - Profits - 2019</h3>
         </div>
       </div>
       <Bar data={barDataProfit} options={options} />

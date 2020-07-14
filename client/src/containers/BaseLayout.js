@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 
 export default function BaseLayout(props) {
   return (
-    <div>
+    <div className="baseLayoutContainer">
       <Navbar />
-      {props.children}
+      <div>{props.children}</div>
       <Footer />
     </div>
   );

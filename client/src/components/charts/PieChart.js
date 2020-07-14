@@ -9,7 +9,7 @@ export default createReactClass({
   render() {
     return (
       <div>
-        <h2>Pie Example</h2>
+        <h3>Pie Example</h3>
         <Pie data={this.props.pieData} />
       </div>
     );

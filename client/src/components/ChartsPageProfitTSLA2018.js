@@ -139,7 +139,7 @@ function ChartPage(props) {
     <div>
       <div className="charts-wrapper">
         <div>
-          <h2>Tesla, Inc. - Quarterly Statement Profits for 2018</h2>
+          <h3>Tesla, Inc. - Profits - 2018</h3>
         </div>
       </div>
       <Bar data={barDataProfit} options={options} />

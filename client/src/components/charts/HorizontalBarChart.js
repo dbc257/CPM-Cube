@@ -30,7 +30,7 @@ export default createReactClass({
   render() {
     return (
       <div>
-        <h2>Horizontal Bar Example</h2>
+        <h3>Horizontal Bar Example</h3>
         <HorizontalBar data={this.props.hBarData} options={options} />
       </div>
     );

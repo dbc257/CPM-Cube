@@ -162,7 +162,7 @@ function ChartPage(props) {
     <div>
       <div className="charts-wrapper">
         <div>
-          <h2>Facebook - Quarterly Statement Profits for 2018</h2>
+          <h3>Facebook - Profits - 2018</h3>
         </div>
       </div>
       {/* <Bar data={barDataRevenue} options={optionsFB} /> */}

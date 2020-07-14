@@ -180,11 +180,11 @@ function ChartPage(props) {
           </LinkContainer>
         </div> */}
         <div>
-          <h2>Facebook - Quarterly Statement Profits for 2019</h2>
+          <h3>Facebook - Profits - 2019</h3>
         </div>
       </div>
       {/* <div className="charts-wrapper">
-        <h2>Facebook</h2>
+        <h3>Facebook</h3>
         <LinkContainer to="/cube-buttons">
           <Button variant="link">Back to Cube</Button>
         </LinkContainer>

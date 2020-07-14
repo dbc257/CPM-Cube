@@ -30,7 +30,7 @@ export default createReactClass({
   render() {
     return (
       <div>
-        <h2>Line Example</h2>
+        <h3>Line Example</h3>
         <Line data={this.props.lineData} options={options} />
       </div>
     );
