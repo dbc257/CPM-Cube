@@ -6,7 +6,7 @@ export default function BaseLayout(props) {
   return (
     <div className="baseLayoutContainer">
       <Navbar />
-      <div>{props.children}</div>
+      {props.children}
       <Footer />
     </div>
   );
