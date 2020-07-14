@@ -27,7 +27,7 @@ function ChartPage(props) {
   // }, [props.chosenOrg]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/charts-profit-fb2017")
+    fetch("http://localhost:3001/facebook/charts-profit-fb2017")
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -162,7 +162,7 @@ function ChartPage(props) {
     <div>
       <div className="fb-wrapper">
         <div>
-          <h2>Facebook - Quarterly Statement Profits for 2019</h2>
+          <h2>Facebook - Quarterly Statement Profits for 2017</h2>
         </div>
       </div>
       {/* <Bar data={barDataRevenue} options={optionsFB} /> */}

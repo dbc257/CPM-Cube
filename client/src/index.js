@@ -11,9 +11,15 @@ import ChartPage from "./components/ChartPage";
 import ChartsPageProfitFB2019 from "./components/ChartsPageProfitFB2019";
 import ChartsPageProfitFB2018 from "./components/ChartsPageProfitFB2018";
 import ChartsPageProfitFB2017 from "./components/ChartsPageProfitFB2017";
+import ChartsPageExpensesFB2019 from "./components/ChartsPageExpensesFB2019";
+import ChartsPageExpensesFB2018 from "./components/ChartsPageExpensesFB2018";
+import ChartsPageExpensesFB2017 from "./components/ChartsPageExpensesFB2017";
+import ChartsPageRevenueFB2019 from "./components/ChartsPageRevenueFB2019";
+import ChartsPageRevenueFB2018 from "./components/ChartsPageRevenueFB2018";
+import ChartsPageRevenueFB2017 from "./components/ChartsPageRevenueFB2017";
 
-import ChartsPageExpenses from "./components/ChartsPageExpenses";
-import ChartsPageRevenue from "./components/ChartsPageRevenue";
+// import ChartsPageExpenses from "./components/ChartsPageExpenses";
+// import ChartsPageRevenue from "./components/ChartsPageRevenue";
 import CubePage from "./components/cubePage/CubePage";
 import CubePageButtons from "./components/cubePage/CubePageButtons";
 import AboutUs from "./components/AboutUs";
@@ -62,25 +68,50 @@ ReactDOM.render(
             <Route exact path="/charts-data" component={ChartPage} />
             <Route
               exact
-              path="/charts-profit-fb2019"
+              path="/facebook/charts-profit-fb2019"
               component={ChartsPageProfitFB2019}
             />
             <Route
               exact
-              path="/charts-profit-fb2018"
+              path="/facebook/charts-profit-fb2018"
               component={ChartsPageProfitFB2018}
             />
             <Route
               exact
-              path="/charts-profit-fb2017"
+              path="/facebook/charts-profit-fb2017"
               component={ChartsPageProfitFB2017}
             />
             <Route
               exact
-              path="/charts-expenses"
-              component={ChartsPageExpenses}
+              path="/facebook/charts-expenses-fb2019"
+              component={ChartsPageExpensesFB2019}
             />
-            <Route exact path="/charts-revenue" component={ChartsPageRevenue} />
+            <Route
+              exact
+              path="/facebook/charts-expenses-fb2018"
+              component={ChartsPageExpensesFB2018}
+            />
+            <Route
+              exact
+              path="/facebook/charts-expenses-fb2017"
+              component={ChartsPageExpensesFB2017}
+            />
+            <Route
+              exact
+              path="/facebook/charts-revenue-fb2019"
+              component={ChartsPageRevenueFB2019}
+            />
+            <Route
+              exact
+              path="/facebook/charts-revenue-fb2018"
+              component={ChartsPageRevenueFB2018}
+            />
+            <Route
+              exact
+              path="/facebook/charts-revenue-fb2018"
+              component={ChartsPageRevenueFB2017}
+            />
+            {/* <Route exact path="/charts-revenue" component={ChartsPageRevenue} /> */}
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             <Route component={App} path="/" exact />
             {/* <Route component={FinanceAPI} path="/finance-api" exact /> */}

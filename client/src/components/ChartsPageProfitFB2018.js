@@ -27,7 +27,7 @@ function ChartPage(props) {
   // }, [props.chosenOrg]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/charts-profit-fb2018")
+    fetch("http://localhost:3001/facebook/charts-profit-fb2018")
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

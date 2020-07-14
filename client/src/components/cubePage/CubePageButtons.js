@@ -37,7 +37,7 @@ function CubePage(props) {
   const handleClick = (e) => {
     props.onButtonChoice(e);
     // props.buttonChoice(emoji);
-    console.log(e);
+    // console.log(e);
     // props.history.push("/charts");
   };
 
@@ -53,7 +53,7 @@ function CubePage(props) {
             <ButtonGroup vertical>
               <ButtonGroup>
                 <LinkContainer
-                  to="/charts-profit-fb2019"
+                  to="/facebook/charts-profit-fb2019"
                   // to="/fb-profit-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
@@ -62,7 +62,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/charts-profit-fb2018"
+                  to="/facebook/charts-profit-fb2018"
                   // to="/fb-profit-charts-2019"
                   onClick={() => handleClick(FB)}
                 >
@@ -71,7 +71,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/charts-profit-fb2017"
+                  to="/facebook/charts-profit-fb2017"
                   // to="/fb-profit-charts-2018"
                   onClick={() => handleClick(FB)}
                 >
@@ -83,7 +83,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/fb-expense-charts-2019"
+                  to="/facebook/charts-expense-fb2019"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -91,7 +91,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-expense-charts-2018"
+                  to="/facebook/charts-expense-fb2018"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -99,7 +99,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-expense-charts-2017"
+                  to="/facebook/charts-expense-fb2017"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -110,7 +110,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/fb-revenue-charts-2019"
+                  to="/facebook/charts-revenue-fb2019"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -118,7 +118,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-revenue-charts-2018"
+                  to="/facebook/charts-revenue-fb2018"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -126,7 +126,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/fb-revenue-charts-2017"
+                  to="/facebook/charts-revenue-fb2017"
                   onClick={() => handleClick(FB)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -141,7 +141,7 @@ function CubePage(props) {
             <ButtonGroup vertical>
               <ButtonGroup>
                 <LinkContainer
-                  to="/appl-profit-charts-2019"
+                  to="/apple/charts-profit-appl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -149,7 +149,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-profit-charts-2018"
+                  to="/apple/charts-profit-appl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -157,7 +157,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-profit-charts-2017"
+                  to="/apple/charts-profit-appl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -168,7 +168,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/appl-expense-charts-2019"
+                  to="/apple/charts-expenses-appl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -176,7 +176,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-expense-charts-2018"
+                  to="/apple/charts-expenses-appl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large" k>
@@ -184,7 +184,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-expense-charts-2017"
+                  to="/apple/charts-expenses-appl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -195,7 +195,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/appl-revenue-charts-2019"
+                  to="/apple/charts-revenue-appl2019"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -203,7 +203,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-revenue-charts-2018"
+                  to="/apple/charts-revenue-appl2018"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -211,7 +211,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/appl-revenue-charts-2017"
+                  to="/apple/charts-revenue-appl2017"
                   onClick={() => handleClick(AAPL)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -226,7 +226,7 @@ function CubePage(props) {
             <ButtonGroup vertical>
               <ButtonGroup>
                 <LinkContainer
-                  to="/tsla-profit-charts-2019"
+                  to="/tesla/charts-profit-tsla2019"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -234,7 +234,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-profit-charts-2018"
+                  to="/tesla/charts-profit-tsla2018"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -242,7 +242,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-profit-charts-2017"
+                  to="/tesla/charts-profit-tsla2017"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="success" bsSize="large">
@@ -253,7 +253,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/tsla-expense-charts-2019"
+                  to="/tesla/charts-expenses-tsla2019"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -261,7 +261,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-expense-charts-2018"
+                  to="/tesla/charts-expenses-tsla2018"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -269,7 +269,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-expense-charts-2017"
+                  to="/tesla/charts-expenses-tsla2017"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="warning" bsSize="large">
@@ -280,7 +280,7 @@ function CubePage(props) {
 
               <ButtonGroup>
                 <LinkContainer
-                  to="/tsla-revenue-charts-2019"
+                  to="/tesla/charts-revenue-tsla2019"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -288,7 +288,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-revenue-charts-2018"
+                  to="/tesla/charts-revenue-tsla2018"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="danger" bsSize="large">
@@ -296,7 +296,7 @@ function CubePage(props) {
                   </Button>
                 </LinkContainer>
                 <LinkContainer
-                  to="/tsla-revenue-charts-2017"
+                  to="/tesla/charts-revenue-tsla2017"
                   onClick={() => handleClick(TSLA)}
                 >
                   <Button type="button" variant="danger" bsSize="large">

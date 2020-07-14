@@ -24,6 +24,8 @@ const BarDataRouter = require("./routes/bar");
 app.use("/api/bar", BarDataRouter);
 const FinanceDataRouter = require("./routes/finance");
 app.use("/api/finance", FinanceDataRouter);
+const FacebookDataRouter = require("./routes/facebook");
+app.use("/facebook", FacebookDataRouter);
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {
@@ -133,48 +135,6 @@ app.post("/api/login", (req, res) => {
 // });
 
 // });
-
-app.get("/charts-profit-fb2019", (req, res) => {
-  models.Company.findAll({
-    where: {
-      [Op.or]: [
-        { symbol: "FB", date: "2019-12-31" },
-        { symbol: "FB", date: "2019-09-30" },
-        { symbol: "FB", date: "2019-06-30" },
-        { symbol: "FB", date: "2019-03-31" },
-      ],
-    },
-  }).then((result) => res.send(result));
-  // res.send("FB 2019 profits success");
-});
-
-app.get("/charts-profit-fb2018", (req, res) => {
-  models.Company.findAll({
-    where: {
-      [Op.or]: [
-        { symbol: "FB", date: "2018-12-31" },
-        { symbol: "FB", date: "2018-09-30" },
-        { symbol: "FB", date: "2018-06-30" },
-        { symbol: "FB", date: "2018-03-31" },
-      ],
-    },
-  }).then((result) => res.send(result));
-  // res.send("FB 2019 profits success");
-});
-
-app.get("/charts-profit-fb2017", (req, res) => {
-  models.Company.findAll({
-    where: {
-      [Op.or]: [
-        { symbol: "FB", date: "2017-12-31" },
-        { symbol: "FB", date: "2017-09-30" },
-        { symbol: "FB", date: "2017-06-30" },
-        { symbol: "FB", date: "2017-03-31" },
-      ],
-    },
-  }).then((result) => res.send(result));
-  // res.send("FB 2019 profits success");
-});
 
 const port = process.env.PORT || 3001;
 
