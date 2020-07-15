@@ -112,14 +112,8 @@ app.post("/chart-data", (req, res) => {
   res.send("Success");
 });
 
-const fs = require("fs")
-const fastcsv = require("fast-csv");
-const { Pool, Client } = require('pg');
-const { table } = require("console");
-
-
 app.post("/api/data", (req, res) => {
-  let csvData = req.body
+  let csvData = req.body;
 
   // let headers = keys[0].join(", ")
   // let tableHeaders = `(userId, ${headers})`
@@ -127,45 +121,16 @@ app.post("/api/data", (req, res) => {
   // let values = keys.map((ele, i) => i + 2 )
   // console.log(values)
 
-
   csvData.map(async (ele) => {
     await models.SavedData.create({
       revenue: ele.Revenue,
       expenses: ele.Expenses,
       cost_expenses: ele.costAndExpenses,
       gross_profit: ele.grossProfit,
-      company: ele.company
-    })
-
-  })
-
-})
-
-// app.post("/chart-data", async (req, res) => {
-//   let symbol = req.body.symbol,
-//   let date = req.body.date,
-//   let revenue = req.body.revenue,
-//   let costAndExpenses = req.body.costAndExpenses,
-//   let grossProfit = req.body.grossProfit
-
-// //   let companyData = {
-// //       symbol: symbol,
-// //       date: date,
-// //       revenue: revenue,
-// //       costAndExpenses: costAndExpenses,
-// //       grossProfit: grossProfit
-// // }
-//   await models.Company.create({
-//     symbol: symbol,
-//       date: date,
-//       revenue: revenue,
-//       costAndExpenses: costAndExpenses,
-//       grossProfit: grossProfit
-//   });
-//   res.send("success");
-// });
-
-// });
+      company: ele.company,
+    });
+  });
+});
 
 const port = process.env.PORT || 3001;
 

@@ -13,6 +13,8 @@ h3 {
   color: seashell;
   margin-top: 15px;
   justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 /* .charts-wrapper {
@@ -36,6 +38,7 @@ h3 {
   height: 100%;
   width: 100%;
   display: flexbox;
+
   justify-content: center;
 }
 
@@ -52,4 +55,11 @@ h3 {
   width: 100%;
   display: flexbox;
   justify-content: center;
+  /* align-items: center; */
 }
+
+/* .cube-title {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+} */

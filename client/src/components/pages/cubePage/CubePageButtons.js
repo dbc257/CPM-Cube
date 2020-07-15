@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 // import Container from "react-bootstrap/Container";
 import * as actionCreators from "../../../store/creators/actionCreators";
-import CsvParse from "./CsvParse";
+// import CsvParse from "./CsvParse";
 // import "./CubePage.scss";
 import "../../css/CubePageButtons.css";
 
@@ -30,8 +30,8 @@ function CubePage(props) {
     <div className="cube-container">
       <div className="cube-wrapper">
         {/* <br /> */}
-        <div>
-          <h4>The Business Intelligence Cube (BIC)</h4>
+        <div className="cube-title">
+          <h3>The Business Intelligence Cube (BIC)</h3>
         </div>
         {/* <br /> */}
       </div>
