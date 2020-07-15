@@ -9,12 +9,27 @@
   font-weight: 400;
   height: 90vh;
 } */
+h3 {
+  color: seashell;
+  margin-top: 15px;
+}
 
-.wrapper {
+/* .charts-wrapper {
   background: linear-gradient(60deg, #420285, #08bdbd);
-  height: 90vh;
+  height: 10vh;
+  height: 10%;
   width: 100%;
   display: flexbox;
+  justify-content: center;
+  color: seashell;
+} */
+.cube-wrapper {
+  background: linear-gradient(60deg, #420285, #08bdbd);
+  /* height: 150vh; */
+  height: 100%;
+  width: 100%;
+  display: flexbox;
+  flex-direction: column;
   justify-content: center;
   color: seashell;
 }

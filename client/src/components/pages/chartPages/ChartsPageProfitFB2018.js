@@ -159,29 +159,23 @@ function ChartPage(props) {
     },
   };
   return (
-    <div>
+    <div className="chart-container">
       <div className="charts-wrapper">
         <div>
           <h3>Facebook - Profits - 2018</h3>
         </div>
       </div>
-      {/* <Bar data={barDataRevenue} options={optionsFB} /> */}
-      {/* <Bar data={barDataRevenue} options={options} width={3} height={1} /> */}
-      {/* <Bar data={barDataExpenses} options={optionsFB} /> */}
-      {/* <Bar data={barDataExpenses} options={options} width={3} height={1} /> */}
-      <Bar data={barDataProfit} options={options} />
-      <Line data={lineDataProfit} options={options} />
-      <Pie data={pieDataProfit} options={options} />
-      {/* <Bar data={barDataProfit} options={options} width={3} height={1} /> */}
-      {/* <Bar
-        data={barDataProfitFB}
-        options={optionsFB}
-        width={100}
-        height={50}
-        options={{
-          maintainAspectRatio: false,
-        }}
-      /> */}
+      <div className="chart-info">
+        <Bar data={barDataProfit} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Line data={lineDataProfit} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Pie data={pieDataProfit} options={options} />
+      </div>
     </div>
   );
 }
