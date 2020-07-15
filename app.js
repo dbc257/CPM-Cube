@@ -112,6 +112,41 @@ app.post("/chart-data", (req, res) => {
   res.send("Success");
 });
 
+const fs = require("fs")
+const fastcsv = require("fast-csv");
+const { Pool, Client } = require('pg')
+
+
+app.post("/api/csvdata", (req, res) => {
+  console.log(req.body)
+
+  let stream = fs.createReadStream(req.body)
+  let csvData = []
+  let csvStream = fastcsv
+    .parse()
+    .on("data", (data) => {
+      csvData.push(data)
+    })
+    .on("end", () => {
+      csvData.shift()
+
+      const pool = new Pool({
+        "username": "stiewhlr",
+        "password": "C41b9j1cKViWwUf9W3skjneRWxmjJASk",
+        "database": "stiewhlr",
+        "host": "hansken.db.elephantsql.com",
+        "dialect": "postgres"
+      })
+
+      pool.query("INSERT INTO savedData(symbol, date, revenue, costAndExpenses, grossProfit) values ($1, $2, $3, $4, $5)", [csvData]) 
+
+
+    })
+
+  
+  
+  stream.pipe(csvStream)
+})
 // app.post("/chart-data", async (req, res) => {
 //   let symbol = req.body.symbol,
 //   let date = req.body.date,
