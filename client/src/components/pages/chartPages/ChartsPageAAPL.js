@@ -250,13 +250,15 @@ function ChartPage(props) {
     },
   };
   return (
-    <div>
+    <div className="chart-container">
       <div className="charts-wrapper">
         <div>
           <h3>Apple, Inc. - Quarterly Statements 2019-2017</h3>
         </div>
       </div>
-      <Line data={lineData} options={options} />
+      <div className="chart-info">
+        <Line data={lineData} options={options} />
+      </div>
     </div>
   );
 }

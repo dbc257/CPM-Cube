@@ -141,15 +141,23 @@ function ChartPage(props) {
     },
   };
   return (
-    <div>
+    <div className="chart-container">
       <div className="charts-wrapper">
         <div>
           <h3>Facebook - Expenses - 2018</h3>
         </div>
       </div>
-      <Bar data={barDataRevenue} options={options} />
-      <Line data={lineDataRevenue} options={options} />
-      <Pie data={pieDataRevenue} options={options} />
+      <div className="chart-info">
+        <Bar data={barDataRevenue} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Line data={lineDataRevenue} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Pie data={pieDataRevenue} options={options} />
+      </div>
     </div>
   );
 }

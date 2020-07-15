@@ -1,7 +1,8 @@
 .chart-info {
-  width: 500px;
-  height: 500px;
-  background-color: burlywood;
+  /* z-index: 99; */
+  /* width: 500px; */
+  /* height: 500px; */
+  background-color: white;
 }
 
 h3 {
@@ -10,10 +11,20 @@ h3 {
 }
 
 .charts-wrapper {
-  background: linear-gradient(60deg, #420285, #08bdbd);
-  height: 10vh;
+  /* background: linear-gradient(60deg, #420285, #08bdbd); */
+  /* height: 10vh; */
+  height: 10%;
   width: 100%;
-  display: flex;
+  display: flexbox;
+  justify-content: center;
+  color: seashell;
+}
+.charts-container {
+  /* background: linear-gradient(60deg, #420285, #08bdbd); */
+  /* height: 10vh; */
+  height: 10%;
+  width: 100%;
+  display: flexbox;
   justify-content: center;
   color: seashell;
 }

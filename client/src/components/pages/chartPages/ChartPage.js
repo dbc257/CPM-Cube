@@ -108,7 +108,7 @@ function ChartPage(props) {
     },
   };
   return (
-    <div>
+    <div className="chart-container">
       <div className="charts-wrapper">
         <div>
           <h3>{props.chosenOrg}</h3>

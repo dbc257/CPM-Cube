@@ -136,15 +136,23 @@ function ChartPage(props) {
     },
   };
   return (
-    <div>
+    <div className="chart-container">
       <div className="charts-wrapper">
         <div>
           <h3>Tesla, Inc. - Profits - 2017</h3>
         </div>
       </div>
-      <Bar data={barDataProfit} options={options} />
-      <Line data={lineDataProfit} options={options} />
-      <Pie data={pieDataProfit} options={options} />
+      <div className="chart-info">
+        <Bar data={barDataProfit} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Line data={lineDataProfit} options={options} />
+      </div>
+      <br />
+      <div className="chart-info">
+        <Pie data={pieDataProfit} options={options} />
+      </div>
     </div>
   );
 }
