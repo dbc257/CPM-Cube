@@ -112,6 +112,35 @@ app.post("/chart-data", (req, res) => {
   res.send("Success");
 });
 
+const fs = require("fs")
+const fastcsv = require("fast-csv");
+const { Pool, Client } = require('pg');
+const { table } = require("console");
+
+
+app.post("/api/data", (req, res) => {
+  let csvData = req.body
+
+  // let headers = keys[0].join(", ")
+  // let tableHeaders = `(userId, ${headers})`
+  // console.log(tableHeaders)
+  // let values = keys.map((ele, i) => i + 2 )
+  // console.log(values)
+
+
+  csvData.map(async (ele) => {
+    await models.SavedData.create({
+      revenue: ele.Revenue,
+      expenses: ele.Expenses,
+      cost_expenses: ele.costAndExpenses,
+      gross_profit: ele.grossProfit,
+      company: ele.company
+    })
+
+  })
+
+})
+
 // app.post("/chart-data", async (req, res) => {
 //   let symbol = req.body.symbol,
 //   let date = req.body.date,

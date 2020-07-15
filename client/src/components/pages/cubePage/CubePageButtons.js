@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 // import Container from "react-bootstrap/Container";
 import * as actionCreators from "../../../store/creators/actionCreators";
+import CsvParse from "./CsvParse"
 // import "./CubePage.scss";
 import "../../css/CubePageButtons.css";
 
@@ -319,9 +320,13 @@ function CubePage(props) {
                 </Button>
               </LinkContainer>
             </ButtonGroup>
+          </div>
+          <div>
+            <CsvParse />
+          </div>
+          {/* <br />
           </ButtonGroup>
         </div>
-
         {/* <br />
           <div>
             <h5>Press Buttons below to add API data to the Company database</h5>
