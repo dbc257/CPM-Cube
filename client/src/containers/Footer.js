@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div>
       {/* <br /> */}
-      <p>Business Intelligence Cube &copy; 2020</p>
+      Business Intelligence Cube &copy; 2020
     </div>
   );
 }

@@ -8,6 +8,7 @@
 h3 {
   color: seashell;
   margin-top: 15px;
+  justify-content: center;
 }
 
 .charts-wrapper {
