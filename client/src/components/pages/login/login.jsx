@@ -36,7 +36,7 @@ export class Login extends React.Component {
           console.log(token);
           this.props.onAuthenticated(true);
           alert(response.data.message);
-          this.props.history.push("/");
+          this.props.history.push("/cube-buttons");
         } else {
           alert(response.data.message);
           alert("response failed");
@@ -64,7 +64,7 @@ export class Login extends React.Component {
           console.log(token);
           this.props.onAuthenticated(true);
           alert(response.data.message);
-          this.props.history.push("/");
+          this.props.history.push("/cube-buttons");
         } else {
           alert(response.data.message);
           alert("response failed");

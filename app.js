@@ -47,8 +47,7 @@ app.post("/register", (req, res) => {
         (user) => {
           if (user) {
             res.send({
-              message:
-                "You are Registered! Now, you can click the blue panel named 'Login' to input your username and password.",
+              message: "Your username and password are registered!",
             });
           } else {
             res.send({ message: "Error: Unable to create user!" });
