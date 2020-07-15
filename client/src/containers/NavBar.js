@@ -41,11 +41,11 @@ function NavBar(props) {
           <LinkContainer to="/cube-buttons">
             <Nav.Link>Cube Buttons</Nav.Link> */}
 
-          {props.isLoggedIn ? (
+          {/* {props.isLoggedIn ? (
             <LinkContainer to="/cube">
               <Nav.Link>Cube</Nav.Link>
             </LinkContainer>
-          ) : null}
+          ) : null} */}
           {props.isLoggedIn ? (
             <LinkContainer to="/cube-buttons">
               <Nav.Link>Cube Buttons</Nav.Link>
@@ -57,9 +57,16 @@ function NavBar(props) {
           </LinkContainer>
         </Nav>
         <Nav>
-          <LinkContainer to="/login">
-            <Nav.Link>Login Register</Nav.Link>
-          </LinkContainer>
+          {props.isLoggedIn ? null : (
+            <LinkContainer to="/login">
+              <Nav.Link>Login</Nav.Link>
+            </LinkContainer>
+          )}
+          {props.isLoggedIn ? null : (
+            <LinkContainer to="/register">
+              <Nav.Link>Register</Nav.Link>
+            </LinkContainer>
+          )}
           <LinkContainer to="/">
             <Nav.Link type="button" onClick={handleSignOut}>
               Signout

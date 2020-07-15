@@ -1,6 +1,6 @@
 import React from "react";
 import "../scss/LoginPage.scss";
-import { Login } from "./login/index";
+import { Register } from "./login/index";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/creators/actionCreators";
 // import { setAuthenticationHeader } from "../../utils/Auth";
@@ -8,9 +8,9 @@ import * as actionCreators from "../../store/creators/actionCreators";
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isLoggedIn: false,
-    // };
+    this.state = {
+      isLoggedIn: false,
+    };
   }
 
   // componentDidMount() {
@@ -34,7 +34,7 @@ class LoginPage extends React.Component {
   // }
 
   render() {
-    // const { isLoggedIn } = this.props.state;
+    const { isLoggedIn } = this.state;
     // const current = isLoggedIn ? "Register" : "Login";
     // const currentActive = isLoggedIn ? "login" : "register";
     return (
@@ -42,20 +42,12 @@ class LoginPage extends React.Component {
       <div className="App">
         <div className="login">
           <div className="container" ref={(ref) => (this.container = ref)}>
-            {/* {!isLoggedIn && ( */}
-            <Login
-              containerRef={(ref) => (this.current = ref)}
-              history={this.props.history}
-              onAuthenticated={this.props.onAuthenticated}
-            />
-            {/* )} */}
-
-            {/* {!isLoggedIn && (
+            {!isLoggedIn && (
               <Register
                 containerRef={(ref) => (this.current = ref)}
                 history={this.props.history}
               />
-            )} */}
+            )}
           </div>
         </div>
       </div>

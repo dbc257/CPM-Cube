@@ -53,6 +53,7 @@ import CubePage from "./components/pages/cubePage/CubePage";
 import CubePageButtons from "./components/pages/cubePage/CubePageButtons";
 import AboutUs from "./components/pages/AboutUs";
 import LoginPage from "./components/pages/LoginPage";
+import RegisterPage from "./components/pages/RegisterPage";
 
 import buttonReducer from "./store/reducers/buttons";
 import loginReducer from "./store/reducers/login";
@@ -85,6 +86,7 @@ ReactDOM.render(
           <Switch>
             <Route component={App} path="/" exact />
             <Route component={LoginPage} path="/login" exact />
+            <Route component={RegisterPage} path="/register" exact />
             <Route component={CubePage} path="/cube" exact />
             <Route component={AboutUs} path="/about-us" exact />
             <Route component={CubePageButtons} path="/cube-buttons" exact />
