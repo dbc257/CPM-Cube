@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 // import Container from "react-bootstrap/Container";
 import * as actionCreators from "../../../store/creators/actionCreators";
+import CsvParse from "./CsvParse";
 // import "./CubePage.scss";
 import "../../css/CubePageButtons.css";
 
@@ -336,46 +337,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(CubePage);
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     buttonChoice: (event) =>
-//       dispatch({ type: "BUTTON_CHOSEN", payload: event }),
-//   };
-// };
-
-/* <br />
-          <div>
-            <h5>Press Buttons below to add API data to the Company database</h5>
-            <br />
-            <ButtonGroup justified>
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(FB)}
-                  variant="success"
-                  bsSize="large"
-                >
-                  Facebook API Upload
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(AAPL)}
-                  variant="warning"
-                  bsSize="large"
-                >
-                  Apple, Inc. API Upload
-                </Button>
-              </LinkContainer>
-
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(TSLA)}
-                  variant="danger"
-                  bsSize="large"
-                >
-                  Tesla, Inc. API Upload
-                </Button>
-              </LinkContainer>
-            </ButtonGroup>
-          </div> */
