@@ -114,39 +114,33 @@ app.post("/chart-data", (req, res) => {
 
 const fs = require("fs")
 const fastcsv = require("fast-csv");
-const { Pool, Client } = require('pg')
+const { Pool, Client } = require('pg');
+const { table } = require("console");
 
 
-app.post("/api/csvdata", (req, res) => {
-  console.log(req.body)
+app.post("/api/data", (req, res) => {
+  let csvData = req.body
 
-  let stream = fs.createReadStream(req.body)
-  let csvData = []
-  let csvStream = fastcsv
-    .parse()
-    .on("data", (data) => {
-      csvData.push(data)
-    })
-    .on("end", () => {
-      csvData.shift()
-
-      const pool = new Pool({
-        "username": "stiewhlr",
-        "password": "C41b9j1cKViWwUf9W3skjneRWxmjJASk",
-        "database": "stiewhlr",
-        "host": "hansken.db.elephantsql.com",
-        "dialect": "postgres"
-      })
-
-      pool.query("INSERT INTO savedData(symbol, date, revenue, costAndExpenses, grossProfit) values ($1, $2, $3, $4, $5)", [csvData]) 
+  // let headers = keys[0].join(", ")
+  // let tableHeaders = `(userId, ${headers})`
+  // console.log(tableHeaders)
+  // let values = keys.map((ele, i) => i + 2 )
+  // console.log(values)
 
 
+  csvData.map(async (ele) => {
+    await models.SavedData.create({
+      revenue: ele.Revenue,
+      expenses: ele.Expenses,
+      cost_expenses: ele.costAndExpenses,
+      gross_profit: ele.grossProfit,
+      company: ele.company
     })
 
-  
-  
-  stream.pipe(csvStream)
+  })
+
 })
+
 // app.post("/chart-data", async (req, res) => {
 //   let symbol = req.body.symbol,
 //   let date = req.body.date,
