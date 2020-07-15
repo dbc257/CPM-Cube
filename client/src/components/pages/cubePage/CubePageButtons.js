@@ -320,59 +320,15 @@ function CubePage(props) {
                 </Button>
               </LinkContainer>
             </ButtonGroup>
+          </ButtonGroup>
           </div>
           <div>
             <CsvParse />
           </div>
-          {/* <br />
-          </ButtonGroup>
-        </div>
-        {/* <br />
-          <div>
-            <h5>Press Buttons below to add API data to the Company database</h5>
-            <br />
-            <ButtonGroup justified>
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(FB)}
-                  variant="success"
-                  bsSize="large"
-                >
-                  Facebook API Upload
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(AAPL)}
-                  variant="warning"
-                  bsSize="large"
-                >
-                  Apple, Inc. API Upload
-                </Button>
-              </LinkContainer>
-
-              <LinkContainer to="/chart-data">
-                <Button
-                  onClick={() => handleClick(TSLA)}
-                  variant="danger"
-                  bsSize="large"
-                >
-                  Tesla, Inc. API Upload
-                </Button>
-              </LinkContainer>
-            </ButtonGroup>
-          </div> */}
       </div>
     </div>
   );
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     buttonChoice: (event) =>
-//       dispatch({ type: "BUTTON_CHOSEN", payload: event }),
-//   };
-// };
 
 const mapDispatchToProps = (dispatch) => {
   return {
