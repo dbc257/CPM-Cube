@@ -11,6 +11,7 @@ import CsvParse from "./CsvParse";
 // import "./CubePage.scss";
 import "../../css/CubePageButtons.css";
 
+
 function CubePage(props) {
   const FB = "FB";
   const AAPL = "AAPL";

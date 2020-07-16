@@ -17,19 +17,16 @@ class CsvParse extends React.Component {
         });
     }
 
-
-
     importCSV = () => {
         const { csvfile } = this.state;
         Papa.parse(csvfile, {
             complete: this.updateData,
             header: true
-        });
-        
+        })
     };
 
     updateData(result) {
-        var data = result.data;
+        let data = result.data;
         console.log(data);
 
         let token = localStorage.getItem("jsonwebtoken")

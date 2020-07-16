@@ -157,9 +157,9 @@ app.post("/api/data", (req, res) => {
 
   const decoded = jwt.verify(token, "keyboard cat")
 
-  console.log(decoded)
-
   let user_id = decoded.id
+
+  // console.log(csvData)
 
   // let headers = keys[0].join(", ")
   // let tableHeaders = `(userId, ${headers})`
@@ -167,27 +167,31 @@ app.post("/api/data", (req, res) => {
   // let values = keys.map((ele, i) => i + 2 )
   // console.log(values)
 
-  for (let i = 0; i < csvData.length; i++){
-    let ele = csvData[i]
-    models.SavedData.create({
-      revenue: ele.Revenue,
-      expenses: ele.Expenses,
-      cost_expenses: ele.costAndExpenses,
-      gross_profit: ele.grossProfit,
-      company: ele.company,
+  // var test = JSON.parse(csvData);
+  // console.log(test)
+
+  console.log(typeof csvData);
+
+  let formattedCsvData = csvData.map(element => {
+    return {
+      revenue: element["Revenue"], 
+      expenses: element["Expenses"],
+      cost_expenses: element["costAndExpenses"],
+      gross_profit: element["grossProfit"],
+      company: element["company"],
       user_id: user_id
-    })
-  }
-  csvData.map(async (ele) => {
-    await models.SavedData.create({
-      revenue: ele.Revenue,
-      expenses: ele.Expenses,
-      cost_expenses: ele.costAndExpenses,
-      gross_profit: ele.grossProfit,
-      company: ele.company,
-      user_id: user_id
-    })
-  });
+    }
+  })
+
+  // csvData = csvData.map((ele) => {
+  //     console.log(ele)
+  //     ele["Revenue"] = 10
+  // })
+
+  console.log(formattedCsvData)
+
+  
+  models.SavedData.bulkCreate(formattedCsvData)
 });
 
 const port = process.env.PORT || 3001;
