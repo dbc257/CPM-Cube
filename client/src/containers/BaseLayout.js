@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./NavBar";
 import Footer from "./Footer";
-import "./BaseLayout.css";
+import "../components/css/BaseLayout.css";
 
 export default function BaseLayout(props) {
   return (
