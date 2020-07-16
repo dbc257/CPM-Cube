@@ -81,12 +81,13 @@ app.post("/api/login", (req, res) => {
       } else {
         if (persistedUser) {
           if (bcrypt.compareSync(password, persistedUser.password)) {
-            const token = jwt.sign({ username: username }, "keyboard cat");
+            console.log(persistedUser)
+            const token = jwt.sign({ username: username, id: persistedUser.id }, "keyboard cat");
             // console.log(token);
             res.json({
               message: "You are now logged in! ",
               success: true,
-              token: token,
+              token: token
             });
           }
         } else {
@@ -137,6 +138,8 @@ app.post("/api/guest-login", (req, res) => {
 
 app.post("/chart-data", (req, res) => {
   req.body.map(async (dummy) => {
+    const currentSessionId = req.session.user
+
     await models.Company.create({
       symbol: dummy.symbol,
       date: dummy.date,
@@ -150,6 +153,13 @@ app.post("/chart-data", (req, res) => {
 
 app.post("/api/data", (req, res) => {
   let csvData = req.body;
+  let token = req.headers["authorization"].split(" ")[1]
+
+  const decoded = jwt.verify(token, "keyboard cat")
+
+  console.log(decoded)
+
+  let user_id = decoded.id
 
   // let headers = keys[0].join(", ")
   // let tableHeaders = `(userId, ${headers})`
@@ -158,13 +168,16 @@ app.post("/api/data", (req, res) => {
   // console.log(values)
 
   csvData.map(async (ele) => {
+    setTimeout(async () => {
     await models.SavedData.create({
       revenue: ele.Revenue,
       expenses: ele.Expenses,
       cost_expenses: ele.costAndExpenses,
       gross_profit: ele.grossProfit,
       company: ele.company,
-    });
+      user_id: user_id
+    })
+    }, 500)
   });
 });
 

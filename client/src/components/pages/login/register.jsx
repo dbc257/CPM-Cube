@@ -54,7 +54,7 @@ export class Register extends React.Component {
               <label htmlFor="password">Password</label>
               <input
                 onChange={this.handleRegister}
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
                 required

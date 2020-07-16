@@ -1,5 +1,6 @@
 import React from "react"
 import * as Papa from "papaparse"
+import { setAuthenticationHeader } from "../../../utils/Auth"
 
 class CsvParse extends React.Component {
     constructor() {
@@ -25,26 +26,26 @@ class CsvParse extends React.Component {
             complete: this.updateData,
             header: true
         });
-        console.log("line 28 " + (this.state.csvfile))
-
-
+        
     };
 
     updateData(result) {
         var data = result.data;
         console.log(data);
 
+        let token = localStorage.getItem("jsonwebtoken")
+
         fetch("http://localhost:3001/api/data", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(data),
         })
     }
 
     render() {
-        console.log(this.state.csvfile);
         return (
             <div className="App">
                 <h2>Import CSV File!</h2>
