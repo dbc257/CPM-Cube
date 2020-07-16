@@ -1,6 +1,5 @@
 import React from "react"
 import * as Papa from "papaparse"
-import { setAuthenticationHeader } from "../../../utils/Auth"
 
 class CsvParse extends React.Component {
     constructor() {
@@ -52,15 +51,11 @@ class CsvParse extends React.Component {
                 <input
                     className="csv-input"
                     type="file"
-                    ref={input => {
-                        this.filesInput = input;
-                    }}
-                    name="file"
                     placeholder={null}
                     onChange={this.handleChange}
                 />
                 <p />
-                <button onClick={this.importCSV}> Upload now!</button>
+                <button onClick={this.importCSV}> Upload now! </button>
             </div>
         );
     }

@@ -167,8 +167,18 @@ app.post("/api/data", (req, res) => {
   // let values = keys.map((ele, i) => i + 2 )
   // console.log(values)
 
+  for (let i = 0; i < csvData.length; i++){
+    let ele = csvData[i]
+    models.SavedData.create({
+      revenue: ele.Revenue,
+      expenses: ele.Expenses,
+      cost_expenses: ele.costAndExpenses,
+      gross_profit: ele.grossProfit,
+      company: ele.company,
+      user_id: user_id
+    })
+  }
   csvData.map(async (ele) => {
-    setTimeout(async () => {
     await models.SavedData.create({
       revenue: ele.Revenue,
       expenses: ele.Expenses,
@@ -177,7 +187,6 @@ app.post("/api/data", (req, res) => {
       company: ele.company,
       user_id: user_id
     })
-    }, 500)
   });
 });
 
