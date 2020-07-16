@@ -28,7 +28,7 @@ class CsvParse extends React.Component {
   };
 
   updateData(result) {
-    var data = result.data;
+    let data = result.data;
     console.log(data);
 
     let token = localStorage.getItem("jsonwebtoken");
