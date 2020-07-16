@@ -67,11 +67,13 @@ function NavBar(props) {
               <Nav.Link>Register</Nav.Link>
             </LinkContainer>
           )}
-          <LinkContainer to="/">
-            <Nav.Link type="button" onClick={handleSignOut}>
-              Signout
-            </Nav.Link>
-          </LinkContainer>
+          {props.isLoggedIn ? (
+            <LinkContainer to="/">
+              <Nav.Link type="button" onClick={handleSignOut}>
+                Signout
+              </Nav.Link>
+            </LinkContainer>
+          ) : null}
           {/* <LinkContainer eventKey={2} to="/login">
             <Nav.Link>Login or Register</Nav.Link>
           </LinkContainer> */}
