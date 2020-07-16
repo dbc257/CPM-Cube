@@ -6,12 +6,12 @@ import * as actionCreators from "../../store/creators/actionCreators";
 // import { setAuthenticationHeader } from "../../utils/Auth";
 
 class LoginPage extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   isLoggedIn: false,
-    // };
-  }
+  // constructor(props) {
+  //   super(props);
+  // this.state = {
+  //   isLoggedIn: false,
+  // };
+  // }
 
   // componentDidMount() {
   //   //Add .right by default
