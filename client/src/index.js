@@ -49,6 +49,8 @@ import ChartsPageRevenueTSLA2018 from "./components/pages/chartPages/ChartsPageR
 import ChartsPageRevenueTSLA2017 from "./components/pages/chartPages/ChartsPageRevenueTSLA2017";
 import ChartsPageTSLA from "./components/pages/chartPages/ChartsPageTSLA";
 
+import ChartsPageUserData from "./components/pages/chartPages/ChartsPageUserData";
+
 import CubePage from "./components/pages/cubePage/CubePage";
 import CubePageButtons from "./components/pages/cubePage/CubePageButtons";
 import AboutUs from "./components/pages/AboutUs";
@@ -227,6 +229,11 @@ ReactDOM.render(
               exact
               path="/tesla/charts-revenue-tsla2017"
               component={ChartsPageRevenueTSLA2017}
+            />
+            <Route
+              exact 
+              path="/userData/user-data"
+              component={ChartsPageUserData}
             />
             {/* <Route exact path="/charts" component={requireAuth(ChartsPage)} /> */}
             {/* <Route exact path="/chart-data" component={ChartPage} /> */}

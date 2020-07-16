@@ -32,7 +32,9 @@ export class Login extends React.Component {
       .then((response) => {
         if (response.data.success) {
           const token = response.data.token;
+          const userId = response.data.userId;
           localStorage.setItem("jsonwebtoken", token);
+          localStorage.setItem("userId", userId);
           setAuthenticationHeader(token);
           // console.log(token);
           this.props.onAuthenticated(true);

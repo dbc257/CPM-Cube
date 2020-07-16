@@ -31,6 +31,8 @@ const AppleDataRouter = require("./routes/apple");
 app.use("/apple", AppleDataRouter);
 const TeslaDataRouter = require("./routes/tesla");
 app.use("/tesla", TeslaDataRouter);
+const userDataRouter = require("./routes/userData")
+app.use("/userData", userDataRouter)
 
 // POST route to register a new user account
 app.post("/register", (req, res) => {
@@ -87,7 +89,8 @@ app.post("/api/login", (req, res) => {
             res.json({
               message: "You are now logged in! ",
               success: true,
-              token: token
+              token: token,
+              userId: persistedUser.id
             });
           }
         } else {
@@ -125,7 +128,7 @@ app.post("/api/guest-login", (req, res) => {
             res.json({
               message: "You are now logged in! ",
               success: true,
-              token: token,
+              token: token
             });
           }
         } else {
@@ -157,7 +160,7 @@ app.post("/api/data", (req, res) => {
 
   const decoded = jwt.verify(token, "keyboard cat")
 
-  let user_id = decoded.id
+  let userId = decoded.id
 
   // console.log(csvData)
 
@@ -179,13 +182,13 @@ app.post("/api/data", (req, res) => {
       cost_expenses: element["costAndExpenses"],
       gross_profit: element["grossProfit"],
       company: element["company"],
-      user_id: user_id
+      userId: userId
     }
   })
 
   // csvData = csvData.map((ele) => {
   //     console.log(ele)
-  //     ele["Revenue"] = 10
+  //     revenue: element["Revenue"], 
   // })
 
   console.log(formattedCsvData)
