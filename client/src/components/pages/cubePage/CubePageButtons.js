@@ -36,32 +36,20 @@ function CubePage(props) {
         {/* <br /> */}
       </div>
       <div>
-        <ButtonGroup justified>
+        <ButtonGroup>
           <LinkContainer to="/facebook/charts-fb">
-            <Button
-              onClick={() => handleClick(FB)}
-              variant="success"
-              bsSize="large"
-            >
+            <Button onClick={() => handleClick(FB)} variant="success">
               Facebook 2019-2017
             </Button>
           </LinkContainer>
           <LinkContainer to="/apple/charts-aapl">
-            <Button
-              onClick={() => handleClick(AAPL)}
-              variant="warning"
-              bsSize="large"
-            >
+            <Button onClick={() => handleClick(AAPL)} variant="warning">
               Apple, Inc. 2019-2017
             </Button>
           </LinkContainer>
 
           <LinkContainer to="/tesla/charts-tsla">
-            <Button
-              onClick={() => handleClick(TSLA)}
-              variant="danger"
-              bsSize="large"
-            >
+            <Button onClick={() => handleClick(TSLA)} variant="danger">
               Tesla, Inc. 2019-2017
             </Button>
           </LinkContainer>
@@ -76,7 +64,7 @@ function CubePage(props) {
               // to="/fb-profit-charts-2019"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Facebook - Profit - 2019
               </Button>
             </LinkContainer>
@@ -85,7 +73,7 @@ function CubePage(props) {
               // to="/fb-profit-charts-2019"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Facebook - Profit - 2018
               </Button>
             </LinkContainer>
@@ -94,7 +82,7 @@ function CubePage(props) {
               // to="/fb-profit-charts-2018"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Facebook - Profit - 2017
               </Button>
             </LinkContainer>
@@ -105,7 +93,7 @@ function CubePage(props) {
               to="/facebook/charts-expenses-fb2019"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Facebook - Expenses - 2019
               </Button>
             </LinkContainer>
@@ -113,7 +101,7 @@ function CubePage(props) {
               to="/facebook/charts-expenses-fb2018"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Facebook - Expenses - 2018
               </Button>
             </LinkContainer>
@@ -121,7 +109,7 @@ function CubePage(props) {
               to="/facebook/charts-expenses-fb2017"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Facebook - Expenses - 2017
               </Button>
             </LinkContainer>
@@ -132,7 +120,7 @@ function CubePage(props) {
               to="/facebook/charts-revenue-fb2019"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Facebook - Revenue - 2019
               </Button>
             </LinkContainer>
@@ -140,7 +128,7 @@ function CubePage(props) {
               to="/facebook/charts-revenue-fb2018"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Facebook - Revenue - 2018
               </Button>
             </LinkContainer>
@@ -148,7 +136,7 @@ function CubePage(props) {
               to="/facebook/charts-revenue-fb2017"
               onClick={() => handleClick(FB)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Facebook - Revenue - 2017
               </Button>
             </LinkContainer>
@@ -163,7 +151,7 @@ function CubePage(props) {
               to="/apple/charts-profit-aapl2019"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Apple, Inc. - Profit - 2019
               </Button>
             </LinkContainer>
@@ -171,7 +159,7 @@ function CubePage(props) {
               to="/apple/charts-profit-aapl2018"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Apple, Inc. - Profit - 2018
               </Button>
             </LinkContainer>
@@ -179,7 +167,7 @@ function CubePage(props) {
               to="/apple/charts-profit-aapl2017"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Apple, Inc. - Profit - 2017
               </Button>
             </LinkContainer>
@@ -190,7 +178,7 @@ function CubePage(props) {
               to="/apple/charts-expenses-aapl2019"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Apple, Inc. - Expenses - 2019
               </Button>
             </LinkContainer>
@@ -198,7 +186,7 @@ function CubePage(props) {
               to="/apple/charts-expenses-aapl2018"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="warning" bsSize="large" k>
+              <Button type="button" variant="warning">
                 Apple, Inc. - Expenses - 2018
               </Button>
             </LinkContainer>
@@ -206,7 +194,7 @@ function CubePage(props) {
               to="/apple/charts-expenses-aapl2017"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Apple, Inc. - Expenses - 2017
               </Button>
             </LinkContainer>
@@ -217,7 +205,7 @@ function CubePage(props) {
               to="/apple/charts-revenue-aapl2019"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Apple, Inc. - Revenue - 2019
               </Button>
             </LinkContainer>
@@ -225,7 +213,7 @@ function CubePage(props) {
               to="/apple/charts-revenue-aapl2018"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Apple, Inc. - Revenue - 2018
               </Button>
             </LinkContainer>
@@ -233,7 +221,7 @@ function CubePage(props) {
               to="/apple/charts-revenue-aapl2017"
               onClick={() => handleClick(AAPL)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Apple, Inc. - Revenue - 2017
               </Button>
             </LinkContainer>
@@ -248,7 +236,7 @@ function CubePage(props) {
               to="/tesla/charts-profit-tsla2019"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Tesla, Inc. - Profit - 2019
               </Button>
             </LinkContainer>
@@ -256,7 +244,7 @@ function CubePage(props) {
               to="/tesla/charts-profit-tsla2018"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Tesla, Inc. - Profit - 2018
               </Button>
             </LinkContainer>
@@ -264,7 +252,7 @@ function CubePage(props) {
               to="/tesla/charts-profit-tsla2017"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="success" bsSize="large">
+              <Button type="button" variant="success">
                 Tesla, Inc. - Profit - 2017
               </Button>
             </LinkContainer>
@@ -275,7 +263,7 @@ function CubePage(props) {
               to="/tesla/charts-expenses-tsla2019"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Tesla, Inc. - Expenses - 2019
               </Button>
             </LinkContainer>
@@ -283,7 +271,7 @@ function CubePage(props) {
               to="/tesla/charts-expenses-tsla2018"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Tesla, Inc. - Expenses - 2018
               </Button>
             </LinkContainer>
@@ -291,7 +279,7 @@ function CubePage(props) {
               to="/tesla/charts-expenses-tsla2017"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="warning" bsSize="large">
+              <Button type="button" variant="warning">
                 Tesla, Inc. - Expenses - 2017
               </Button>
             </LinkContainer>
@@ -302,7 +290,7 @@ function CubePage(props) {
               to="/tesla/charts-revenue-tsla2019"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Tesla, Inc. - Revenue - 2019
               </Button>
             </LinkContainer>
@@ -310,7 +298,7 @@ function CubePage(props) {
               to="/tesla/charts-revenue-tsla2018"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Tesla, Inc. - Revenue - 2018
               </Button>
             </LinkContainer>
@@ -318,7 +306,7 @@ function CubePage(props) {
               to="/tesla/charts-revenue-tsla2017"
               onClick={() => handleClick(TSLA)}
             >
-              <Button type="button" variant="danger" bsSize="large">
+              <Button type="button" variant="danger">
                 Tesla, Inc. - Revenue - 2017
               </Button>
             </LinkContainer>
