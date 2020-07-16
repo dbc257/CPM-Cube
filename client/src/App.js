@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
-import LandingPage from "./components/HomePage";
-import FinanceList from "./components/FinanceList";
-
+import HomePage from "./components/pages/HomePage";
 
 function App() {
   return (
     <div>
-      <FinanceList />
-      <LandingPage />
+      <HomePage />
     </div>
   );
 }
