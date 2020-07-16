@@ -4,6 +4,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import * as actionCreators from "../../../store/creators/actionCreators";
 import { setAuthenticationHeader } from "../../../utils/Auth";
+// import "../../../../src/.env";
 
 export class Login extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export class Login extends React.Component {
           const token = response.data.token;
           localStorage.setItem("jsonwebtoken", token);
           setAuthenticationHeader(token);
-          console.log(token);
+          // console.log(token);
           this.props.onAuthenticated(true);
           alert(response.data.message);
           this.props.history.push("/cube-buttons");
@@ -51,31 +52,26 @@ export class Login extends React.Component {
   };
 
   handleGuestPost = () => {
-    axios
-      .post("http://localhost:3001/api/login", {
-        username: "David",
-        password: "1234",
-      })
-      .then((response) => {
-        if (response.data.success) {
-          const token = response.data.token;
-          localStorage.setItem("jsonwebtoken", token);
-          setAuthenticationHeader(token);
-          console.log(token);
-          this.props.onAuthenticated(true);
-          alert(response.data.message);
-          this.props.history.push("/cube-buttons");
-        } else {
-          alert(response.data.message);
-          alert("response failed");
-          this.props.state = {
-            user: {
-              ...this.state.user,
-              password: "",
-            },
-          };
-        }
-      });
+    axios.post("http://localhost:3001/api/guest-login", {}).then((response) => {
+      if (response.data.success) {
+        const token = response.data.token;
+        localStorage.setItem("jsonwebtoken", token);
+        setAuthenticationHeader(token);
+        // console.log(token);
+        this.props.onAuthenticated(true);
+        alert(response.data.message);
+        this.props.history.push("/cube-buttons");
+      } else {
+        alert(response.data.message);
+        alert("response failed");
+        this.props.state = {
+          user: {
+            ...this.state.user,
+            password: "",
+          },
+        };
+      }
+    });
   };
 
   render() {

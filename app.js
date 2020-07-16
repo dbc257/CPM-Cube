@@ -7,6 +7,7 @@ const auth = require("./middlewares/authMiddleware.js");
 const { Op } = require("sequelize");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+require("dotenv").config();
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -59,7 +60,6 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/api/login", (req, res) => {
-  console.log(req.body);
   let username = req.body.username;
   let password = req.body.password;
   let userArray = [];
@@ -82,7 +82,7 @@ app.post("/api/login", (req, res) => {
         if (persistedUser) {
           if (bcrypt.compareSync(password, persistedUser.password)) {
             const token = jwt.sign({ username: username }, "keyboard cat");
-            console.log(token);
+            // console.log(token);
             res.json({
               message: "You are now logged in! ",
               success: true,
@@ -90,7 +90,44 @@ app.post("/api/login", (req, res) => {
             });
           }
         } else {
-          console.log("false");
+          // user does not exists maybe username or password are wrong
+          res.json({ message: "Oops, there was an error!", success: false });
+        }
+      }
+    });
+});
+
+app.post("/api/guest-login", (req, res) => {
+  let username = process.env.REACT_APP_USERNAME;
+  let password = process.env.REACT_APP_PASSWORD;
+  let userArray = [];
+  models.User.findOne({
+    where: {
+      username: username,
+    },
+  })
+    .then((user) => {
+      userArray.push(user);
+    })
+    .then(() => {
+      // find if the username and password exists in the users array
+      const persistedUser = userArray.find((user) => {
+        return user.username == username;
+      });
+      if (persistedUser == null) {
+        res.json({ message: "Username not found!", success: false });
+      } else {
+        if (persistedUser) {
+          if (bcrypt.compareSync(password, persistedUser.password)) {
+            const token = jwt.sign({ username: username }, "keyboard cat");
+            // console.log(token);
+            res.json({
+              message: "You are now logged in! ",
+              success: true,
+              token: token,
+            });
+          }
+        } else {
           // user does not exists maybe username or password are wrong
           res.json({ message: "Oops, there was an error!", success: false });
         }
