@@ -314,8 +314,9 @@ function CubePage(props) {
           </ButtonGroup>
         </ButtonGroup>
       </div>
+      <br />
       <div>
-        <CsvParse /> 
+        <CsvParse />
       </div>
     </div>
   );

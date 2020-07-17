@@ -52,9 +52,9 @@ function NavBar(props) {
             </LinkContainer>
           ) : null}
 
-          <LinkContainer to="/about-us">
+          {/* <LinkContainer to="/about-us">
             <Nav.Link>About Us</Nav.Link>
-          </LinkContainer>
+          </LinkContainer> */}
         </Nav>
         <Nav>
           {props.isLoggedIn ? null : (
