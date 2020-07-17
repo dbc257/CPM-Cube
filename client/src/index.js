@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
@@ -9,7 +10,6 @@ import thunk from "redux-thunk";
 import BaseLayout from "./containers/BaseLayout";
 import { setAuthenticationHeader } from "./utils/Auth";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
 // import ChartPage from "./components/pages/chartPages/ChartPage";
 // import * as actionTypes from "./store/actions/actionTypes";
 // import HomePage from "./components/pages/HomePage"

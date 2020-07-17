@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,9 @@
     "papaparse": "^5.2.0",
     "pg": "^8.2.1",
     "react-papaparse": "^3.4.0",
-    "sequelize": "^5.22.3"
+    "sequelize": "^5.22.3",
+    "@cubejs-backend/postgres-driver": "^0.19.50",
+    "@cubejs-backend/server": "^0.19.50"
   },
   "devDependencies": {}
 }
