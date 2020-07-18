@@ -2,7 +2,7 @@ import React from "react";
 import loginImg from "../../../images/login.svg";
 import axios from "axios";
 import { connect } from "react-redux";
-import * as actionCreators from "../../../store/creators/actionCreators";
+import * as actionCreators from "../../store/creators/actionCreators";
 import { setAuthenticationHeader } from "../../../utils/Auth";
 // import "../../../../src/.env";
 

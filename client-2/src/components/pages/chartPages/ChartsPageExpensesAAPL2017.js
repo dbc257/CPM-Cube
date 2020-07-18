@@ -3,8 +3,8 @@ import { Bar } from "react-chartjs-2";
 import { Line } from "react-chartjs-2";
 import { Pie } from "react-chartjs-2";
 import { connect } from "react-redux";
-import * as actionCreators from "../../../store/creators/actionCreators";
-import "../../css/ChartsPage.css";
+import * as actionCreators from "../../store/creators/actionCreators";
+
 
 function ChartPage(props) {
   const [financials, setFinancials] = useState([]);

@@ -16,49 +16,6 @@ import { setAuthenticationHeader } from "./utils/Auth";
 // import reducer from "./store/reducer";
 // let store = createStore(reducer);
 
-import ChartsPageProfitFB2019 from "./components/pages/chartPages/ChartsPageProfitFB2019";
-import ChartsPageProfitFB2018 from "./components/pages/chartPages/ChartsPageProfitFB2018";
-import ChartsPageProfitFB2017 from "./components/pages/chartPages/ChartsPageProfitFB2017";
-import ChartsPageExpensesFB2019 from "./components/pages/chartPages/ChartsPageExpensesFB2019";
-import ChartsPageExpensesFB2018 from "./components/pages/chartPages/ChartsPageExpensesFB2018";
-import ChartsPageExpensesFB2017 from "./components/pages/chartPages/ChartsPageExpensesFB2017";
-import ChartsPageRevenueFB2019 from "./components/pages/chartPages/ChartsPageRevenueFB2019";
-import ChartsPageRevenueFB2018 from "./components/pages/chartPages/ChartsPageRevenueFB2018";
-import ChartsPageRevenueFB2017 from "./components/pages/chartPages/ChartsPageRevenueFB2017";
-import ChartsPageFB from "./components/pages/chartPages/ChartsPageFB";
-
-import ChartsPageProfitAAPL2019 from "./components/pages/chartPages/ChartsPageProfitAAPL2019";
-import ChartsPageProfitAAPL2018 from "./components/pages/chartPages/ChartsPageProfitAAPL2018";
-import ChartsPageProfitAAPL2017 from "./components/pages/chartPages/ChartsPageProfitAAPL2017";
-import ChartsPageExpensesAAPL2019 from "./components/pages/chartPages/ChartsPageExpensesAAPL2019";
-import ChartsPageExpensesAAPL2018 from "./components/pages/chartPages/ChartsPageExpensesAAPL2018";
-import ChartsPageExpensesAAPL2017 from "./components/pages/chartPages/ChartsPageExpensesAAPL2017";
-import ChartsPageRevenueAAPL2019 from "./components/pages/chartPages/ChartsPageRevenueAAPL2019";
-import ChartsPageRevenueAAPL2018 from "./components/pages/chartPages/ChartsPageRevenueAAPL2018";
-import ChartsPageRevenueAAPL2017 from "./components/pages/chartPages/ChartsPageRevenueAAPL2017";
-import ChartsPageAAPL from "./components/pages/chartPages/ChartsPageAAPL";
-
-import ChartsPageProfitTSLA2019 from "./components/pages/chartPages/ChartsPageProfitTSLA2019";
-import ChartsPageProfitTSLA2018 from "./components/pages/chartPages/ChartsPageProfitTSLA2018";
-import ChartsPageProfitTSLA2017 from "./components/pages/chartPages/ChartsPageProfitTSLA2017";
-import ChartsPageExpensesTSLA2019 from "./components/pages/chartPages/ChartsPageExpensesTSLA2019";
-import ChartsPageExpensesTSLA2018 from "./components/pages/chartPages/ChartsPageExpensesTSLA2018";
-import ChartsPageExpensesTSLA2017 from "./components/pages/chartPages/ChartsPageExpensesTSLA2017";
-import ChartsPageRevenueTSLA2019 from "./components/pages/chartPages/ChartsPageRevenueTSLA2019";
-import ChartsPageRevenueTSLA2018 from "./components/pages/chartPages/ChartsPageRevenueTSLA2018";
-import ChartsPageRevenueTSLA2017 from "./components/pages/chartPages/ChartsPageRevenueTSLA2017";
-import ChartsPageTSLA from "./components/pages/chartPages/ChartsPageTSLA";
-
-import CubePage from "./components/pages/cubePage/CubePage";
-import CubePageButtons from "./components/pages/cubePage/CubePageButtons";
-import AboutUs from "./components/pages/AboutUs";
-import LoginPage from "./components/pages/LoginPage";
-import RegisterPage from "./components/pages/RegisterPage";
-
-import buttonReducer from "./store/reducers/buttons";
-import loginReducer from "./store/reducers/login";
-// import requireAuth from "./components/utils/requireAuth";
-
 const rootReducer = combineReducers({
   buttonRed: buttonReducer,
   loginRed: loginReducer,
@@ -73,10 +30,6 @@ const store = createStore(
 
 const token = localStorage.getItem("jsonwebtoken");
 setAuthenticationHeader(token);
-// store.dispatch({
-//   type: actionTypes.AUTHENTICATED,
-//   value: token !== null,
-// });
 
 ReactDOM.render(
   <React.StrictMode>

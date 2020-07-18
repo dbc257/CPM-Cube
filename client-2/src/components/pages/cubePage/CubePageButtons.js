@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 // import Container from "react-bootstrap/Container";
-import * as actionCreators from "../../../store/creators/actionCreators";
+import * as actionCreators from "../../store/creators/actionCreators";
 import CsvParse from "./CsvParse";
 // import "./CubePage.scss";
 import "../../css/CubePageButtons.css";
