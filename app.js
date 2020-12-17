@@ -136,7 +136,7 @@ app.post("/api/guest-login", (req, res) => {
     });
 });
 
-app.post("/chart-data", (req, res) => {
+app.post("/chart-data", auth, (req, res) => {
   req.body.map(async (dummy) => {
     const currentSessionId = req.session.user
 
